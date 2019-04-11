@@ -1,38 +1,38 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%= t('place.title') %></strong><br/>
   <%= @place.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%= t('place.description') %></strong><br/>
   <%= @place.description %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong><%= t('place.price') %></strong><br/>
   <%= @place.price %>
 </p>
 
 <p>
-  <strong>Duration:</strong>
+  <strong><%= t('place.duration') %></strong><br/>
   <%= @place.duration %>
 </p>
 
 <p>
-  <strong>Schedule:</strong>
+  <strong><%= t('place.schedule') %></strong><br/>
   <%= @place.schedule %>
 </p>
 
 <p>
-  <strong>Lat:</strong>
+  <strong><%= t('place.lat') %></strong><br/>
   <%= @place.lat %>
 </p>
 
 <p>
-  <strong>Lng:</strong>
+  <strong><%= t('place.lng') %></strong><br/>
   <%= @place.lng %>
 </p>
 
-<%= link_to 'Back', places_path %>
+<%= link_to t('buttons.back'), places_path %>

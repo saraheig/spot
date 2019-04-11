@@ -1,5 +1,5 @@
-<h1>New Place</h1>
+<h1><%= t('place.suggestion') %></h1>
 
 <%= render 'form', place: @place %>
 
-<%= link_to 'Back', places_path %>
+<%= link_to t('buttons.cancel'), places_path %>

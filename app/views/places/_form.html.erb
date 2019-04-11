@@ -1,8 +1,7 @@
 <%= form_with(model: place, local: true) do |form| %>
   <% if place.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
-
+      <h2><%= t('errors.template', :count => place.errors.count) %></h2>
       <ul>
       <% place.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,41 +11,41 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label t('place.title') %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label t('place.description') %>
     <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label t('place.price') %>
     <%= form.text_field :price %>
   </div>
 
   <div class="field">
-    <%= form.label :duration %>
+    <%= form.label t('place.duration') %>
     <%= form.number_field :duration %>
   </div>
 
   <div class="field">
-    <%= form.label :schedule %>
+    <%= form.label t('place.schedule') %>
     <%= form.text_area :schedule %>
   </div>
 
   <div class="field">
-    <%= form.label :lat %>
+    <%= form.label t('place.lat') %>
     <%= form.text_field :lat %>
   </div>
 
   <div class="field">
-    <%= form.label :lng %>
+    <%= form.label t('place.lng') %>
     <%= form.text_field :lng %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('buttons.create') %>
   </div>
 <% end %>

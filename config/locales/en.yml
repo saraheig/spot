@@ -30,4 +30,69 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      admin_user: "Administrators"
+      comment: "Comments"
+      place: "Places"
+    attributes:
+      place:
+        created_at: "Created at"
+        title: "Title"
+        description: "Description"
+        price: "Price"
+        duration: "Duration"
+        schedule: "Schedule"
+        lat: "Latitude"
+        lng: "Longitude"
+        updated_at: "Updated at"
+  buttons:
+    back: "Back"
+    cancel: "Annuler"
+    create: "Send this suggestion"
+    new: "Suggest a new place"
+    show: "Show this place"
+  errors:
+    format: "The field \"%{attribute}\" %{message}."
+    messages:
+      blank: "must not be blank"
+      empty: "must not be empty"
+      exclusion: "must not be reserved"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      invalid: "must be valid"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      model_invalid: "Validation failed: %{errors}"
+      not_a_number: "must be a number"
+      not_an_integer: "must be an integer"
+      required: "must exist"
+      taken: "must not been already taken"
+      too_long:
+        one: "must be shorter (maximum is 1 character)"
+        other: "must be shorter (maximum is %{count} characters)"
+      too_short:
+        one: "must be longer (minimum is 1 character)"
+        other: "must be longer (minimum is %{count} characters)"
+      wrong_length:
+        one: "is the wrong length (should be 1 character)"
+        other: "is the wrong length (should be %{count} characters)"
+    template:
+      one: "Cancelled registration: 1 error"
+      other: "Cancelled registration: %{count} errors"
+  general:
+    title: "Spots of Yverdon"
+  messages:
+    create: "The suggestion has been send."
+  place:
+    description: "Description"
+    duration: "Duration [minutes]"
+    lat: "Latitude"
+    lng: "Longitude"
+    price: "Price [CHF]"
+    schedule: "Information about schedule"
+    suggestion: "Suggestion of a new place"
+    title: "Title"
+  time:
+    formats:
+      long: "%B %d, %Y %H:%M"

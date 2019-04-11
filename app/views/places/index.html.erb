@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Places</h1>
+<h1><%= t('general.title') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Duration</th>
-      <th>Schedule</th>
-      <th>Lat</th>
-      <th>Lng</th>
+      <th><%= t('place.title') %></th>
+      <th><%= t('place.description') %></th>
+      <th><%= t('place.price') %></th>
+      <th><%= t('place.duration') %></th>
+      <th><%= t('place.schedule') %></th>
+      <th><%= t('place.lat') %></th>
+      <th><%= t('place.lng') %></th>
       <th></th>
     </tr>
   </thead>
@@ -26,7 +26,7 @@
         <td><%= place.schedule %></td>
         <td><%= place.lat %></td>
         <td><%= place.lng %></td>
-        <td><%= link_to 'Show', place %></td>
+        <td><%= link_to t('buttons.show'), place %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Place', new_place_path %>
+<%= link_to t('buttons.new'), new_place_path %>
