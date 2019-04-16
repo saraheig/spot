@@ -41,6 +41,9 @@ gem 'cancancan', '~> 3.0'
 gem 'draper', '~> 3.1'
 gem 'pundit', '~> 2.0', '>= 2.0.1'
 
+# Use Webpack to manage app-like JavaScript modules in Rails
+gem 'webpacker', '~> 4.0', '>= 4.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
