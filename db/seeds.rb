@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-AdminUser.delete_all
+AdminUser.delete_all if Rails.env.development?
 Place.delete_all
 
 AdminUser.create!(
