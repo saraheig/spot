@@ -47,6 +47,12 @@ gem 'webpacker', '~> 4.0', '>= 4.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Automatic Ruby code style checking tool
+  gem 'rubocop', '~> 0.67.2'
+  # Code style checking for RSpec files
+  gem 'rubocop-rspec', '~> 1.32'
+  # Collection of RuboCop cops to check performance optimizations in Ruby code
+  gem 'rubocop-performance', '~> 1.1'
 end
 
 group :development do
