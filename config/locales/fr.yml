@@ -54,14 +54,9 @@ fr:
   messages:
     create: "La suggestion a été envoyée."
   place:
-    description: "Description"
-    duration: "Durée [minutes]"
-    lat: "Latitude"
-    lng: "Longitude"
-    price: "Prix [CHF]"
-    schedule: "Information sur les horaires"
+    duration_unit: "minutes"
+    price_unit: "CHF"
     suggestion: "Suggestion d'un nouveau lieu d'intérêt"
-    title: "Titre"
   time:
     formats:
       long: "%d.%m.%Y - %Hh%M"

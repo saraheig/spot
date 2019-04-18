@@ -85,14 +85,9 @@ en:
   messages:
     create: "The suggestion has been send."
   place:
-    description: "Description"
-    duration: "Duration [minutes]"
-    lat: "Latitude"
-    lng: "Longitude"
-    price: "Price [CHF]"
-    schedule: "Information about schedule"
+    duration_unit: "minutes"
+    price_unit: "CHF"
     suggestion: "Suggestion of a new place"
-    title: "Title"
   time:
     formats:
       long: "%B %d, %Y %H:%M"

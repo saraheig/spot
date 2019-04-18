@@ -11,38 +11,52 @@
   <% end %>
 
   <div class="field">
-    <%= form.label t('place.title') %>
-    <%= form.text_field :title %>
+    <label class="label"><%= t('activerecord.attributes.place.title') %></label>
+      <div class="control">
+        <%= form.text_field :title %>
+      </div>
   </div>
 
   <div class="field">
-    <%= form.label t('place.description') %>
-    <%= form.text_area :description %>
+    <label class="label"><%= t('activerecord.attributes.place.description') %></label>
+      <div class="control">
+        <%= form.text_area :description %>
+      </div>
   </div>
 
   <div class="field">
-    <%= form.label t('place.price') %>
-    <%= form.text_field :price %>
+    <label class="label"><%= t('activerecord.attributes.place.price') %></label>
+      <div class="control">
+        <%= form.text_field :price %>
+      </div>
   </div>
 
   <div class="field">
-    <%= form.label t('place.duration') %>
-    <%= form.number_field :duration %>
+    <label class="label"><%= t('activerecord.attributes.place.duration') %></label>
+      <div class="control">
+        <%= form.number_field :duration %>
+      </div>
   </div>
 
   <div class="field">
-    <%= form.label t('place.schedule') %>
-    <%= form.text_area :schedule %>
+    <label class="label"><%= t('activerecord.attributes.place.schedule') %></label>
+      <div class="control">
+        <%= form.text_area :schedule %>
+      </div>
   </div>
 
   <div class="field">
-    <%= form.label t('place.lat') %>
-    <%= form.text_field :lat %>
+    <label class="label"><%= t('activerecord.attributes.place.lat') %></label>
+      <div class="control">
+        <%= form.text_field :lat %>
+      </div>
   </div>
 
   <div class="field">
-    <%= form.label t('place.lng') %>
-    <%= form.text_field :lng %>
+    <label class="label"><%= t('activerecord.attributes.place.lng') %></label>
+      <div class="control">
+        <%= form.text_field :lng %>
+      </div>
   </div>
 
   <div class="actions">
