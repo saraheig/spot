@@ -12,10 +12,14 @@ The application is currently deployed on [Heroku](https://yverdon.herokuapp.com)
   * [Ruby][ruby] 2.6+
 * [PostgreSQL][postgresql] 10.6+
   * [PostGIS][postgis] 2.4+
-* [Bulma][bulma] 0.7+ (install with `npm install bulma`)
+* [Yarn][yarn] 1.15+
+* [Webpack][webpack] 4.0+
+* [Bulma][bulma] 0.7+
 
 [bulma]: https://bulma.io
 [postgis]: https://postgis.net
 [postgresql]: https://www.postgresql.org
 [rails]: https://rubyonrails.org
 [ruby]: https://www.ruby-lang.org
+[webpack]: https://webpack.js.org
+[yarn]: https://yarnpkg.com
