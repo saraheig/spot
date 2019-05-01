@@ -20,5 +20,7 @@ module Spot
     config.i18n.available_locales = [:en, :fr]
     # Configure the i18n: Set default locale to :fr instead of :en
     config.i18n.default_locale = :fr
+    # Configure time zone
+    config.time_zone = 'Bern'
   end
 end
