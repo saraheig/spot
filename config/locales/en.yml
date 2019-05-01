@@ -84,6 +84,9 @@ en:
     title: "Spots of Yverdon"
   messages:
     create: "The suggestion has been send."
+  menu:
+    administration: "Administrator interface"
+    spots: "Spots"
   place:
     duration_unit: "minutes"
     price_unit: "CHF"

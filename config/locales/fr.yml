@@ -53,6 +53,9 @@ fr:
     title: "Lieux d'intérêt à Yverdon"
   messages:
     create: "La suggestion a été envoyée."
+  menu:
+    administration: "Interface administrateur"
+    spots: "Lieux d'intérêt"
   place:
     duration_unit: "minutes"
     price_unit: "CHF"
