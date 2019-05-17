@@ -2,10 +2,20 @@ fr:
   activerecord:
     models:
       admin_user: "Administrateurs"
+      category: "Catégories"
       comment: "Commentaires"
       place: "Lieux d'intérêt"
     attributes:
+      category:
+        created_at: "Créé le"
+        title: "Titre"
+        description: "Description"
+        place: "Lieu d'intérêt"
+        places: "Lieu(x) d'intérêt"
+        updated_at: "Mis à jour le"
       place:
+        category: "Catégorie"
+        categories: "Catégorie(s)"
         created_at: "Créé le"
         title: "Titre"
         description: "Description"
@@ -15,6 +25,9 @@ fr:
         lat: "Latitude"
         lng: "Longitude"
         updated_at: "Mis à jour le"
+  active_admin:
+    dashboard_category: "Toutes les catégories"
+    dashboard_place: "Derniers lieux d'intérêt ajoutés / modifiés"
   buttons:
     back: "Retour"
     cancel: "Annuler"
@@ -55,7 +68,8 @@ fr:
     create: "La suggestion a été envoyée."
   menu:
     administration: "Interface administrateur"
-    spots: "Lieux d'intérêt"
+    categories: "Filtrer les lieux par catégorie"
+    spots: "Tous les lieux d'intérêt"
   place:
     duration_unit: "minutes"
     price_unit: "CHF"

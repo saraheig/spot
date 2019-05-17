@@ -12,51 +12,63 @@
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.title') %></label>
-      <div class="control">
-        <%= form.text_field :title %>
-      </div>
+    <div class="control">
+      <%= form.text_field :title %>
+    </div>
   </div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.description') %></label>
-      <div class="control">
-        <%= form.text_area :description %>
-      </div>
+    <div class="control">
+      <%= form.text_area :description %>
+    </div>
   </div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.price') %></label>
-      <div class="control">
-        <%= form.text_field :price %>
-      </div>
+    <div class="control">
+      <%= form.text_field :price %>
+    </div>
   </div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.duration') %></label>
-      <div class="control">
-        <%= form.number_field :duration %>
-      </div>
+    <div class="control">
+      <%= form.number_field :duration %>
+    </div>
   </div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.schedule') %></label>
-      <div class="control">
-        <%= form.text_area :schedule %>
-      </div>
+    <div class="control">
+      <%= form.text_area :schedule %>
+    </div>
   </div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.lat') %></label>
-      <div class="control">
-        <%= form.text_field :lat %>
-      </div>
+    <div class="control">
+      <%= form.text_field :lat %>
+    </div>
   </div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.lng') %></label>
-      <div class="control">
-        <%= form.text_field :lng %>
-      </div>
+    <div class="control">
+      <%= form.text_field :lng %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.place.categories') %></label>
+    <div class="control">
+      <% for category in Category.all %>
+        <div>
+          <%= check_box_tag "place[category_ids][]", category.id %>
+          <%= category.title %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div class="actions">

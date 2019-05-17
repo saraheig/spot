@@ -33,10 +33,20 @@ en:
   activerecord:
     models:
       admin_user: "Administrators"
+      category: "Categories"
       comment: "Comments"
       place: "Places"
     attributes:
+      category:
+        created_at: "Created at"
+        title: "Title"
+        description: "Description"
+        place: "Place"
+        places: "Place(s)"
+        updated_at: "Updated at"
       place:
+        category: "Category"
+        categories: "Category / categories"
         created_at: "Created at"
         title: "Title"
         description: "Description"
@@ -46,6 +56,9 @@ en:
         lat: "Latitude"
         lng: "Longitude"
         updated_at: "Updated at"
+  active_admin:
+    dashboard_category: "All the categories"
+    dashboard_place: "Last added / modified places"
   buttons:
     back: "Back"
     cancel: "Annuler"
@@ -86,7 +99,8 @@ en:
     create: "The suggestion has been send."
   menu:
     administration: "Administrator interface"
-    spots: "Spots"
+    categories: "Filter the spots by category"
+    spots: "All spots"
   place:
     duration_unit: "minutes"
     price_unit: "CHF"

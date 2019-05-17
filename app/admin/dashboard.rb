@@ -2,10 +2,34 @@ ActiveAdmin.register_page 'Dashboard' do
   menu priority: 1, label: proc { I18n.t('active_admin.dashboard') }
 
   content title: proc { I18n.t('active_admin.dashboard') } do
-    div class: 'blank_slate_container', id: 'dashboard_default_message' do
-      span class: 'blank_slate' do
-        span I18n.t('active_admin.dashboard_welcome.welcome')
-        small I18n.t('active_admin.dashboard_welcome.call_to_action')
+    # div class: 'blank_slate_container', id: 'dashboard_default_message' do
+    #   span class: 'blank_slate' do
+    #     span I18n.t('active_admin.dashboard_welcome.welcome')
+    #     small I18n.t('active_admin.dashboard_welcome.call_to_action')
+    #   end
+    # end
+
+    columns do
+      column do
+        panel I18n.t('active_admin.dashboard_category') do
+          ul do
+            Category.all.map do |category|
+              li link_to(category.title, admin_category_path(category))
+            end
+          end
+        end
+      end
+    end
+
+    columns do
+      column do
+        panel I18n.t('active_admin.dashboard_place') do
+          ul do
+            Place.last(3).map do |place|
+              li link_to(place.title, admin_place_path(place))
+            end
+          end
+        end
       end
     end
 

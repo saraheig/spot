@@ -25,6 +25,14 @@
       <div class="navbar-menu" id="navbarSpot">
         <div class="navbar-start">
           <a class="navbar-item" href="/"><%= t('menu.spots') %></a>
+          <div class="navbar-item has-dropdown dropdown is-hoverable" onclick="document.querySelector('.dropdown').classList.toggle('is-active');">
+            <a class="navbar-link is-arrowless"><%= t('menu.categories') %></a>
+            <div class="navbar-dropdown">
+              <% Category.all.each do |category| %>
+                <a class="navbar-item" href="/places?cat=<%= category.title %>"><%= category.title %></a>
+              <% end %>
+            </div>
+          </div>
           <a class="navbar-item" href="/admin"><%= t('menu.administration') %></a>
         </div>
       </div>

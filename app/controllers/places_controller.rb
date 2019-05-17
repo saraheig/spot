@@ -4,7 +4,11 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
+    @places = if params[:cat]
+                Place.joins(:category).where('categories.title = ?', params[:cat]).order(:title)
+              else
+                Place.all.order(:title)
+              end
   end
 
   # GET /places/1
@@ -41,6 +45,6 @@ class PlacesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def place_params
-    params.require(:place).permit(:title, :description, :price, :duration, :schedule, :lat, :lng)
+    params.require(:place).permit(:title, :description, :price, :duration, :schedule, :lat, :lng, category_ids: [])
   end
 end

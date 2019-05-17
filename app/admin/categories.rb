@@ -1,22 +1,17 @@
-ActiveAdmin.register Place do
+ActiveAdmin.register Category do
   # Customize form
   form html: { multiplart: true } do |form|
     form.inputs do
       form.input :title
       form.input :description
-      form.input :price
-      form.input :duration
-      form.input :schedule
-      form.input :lat
-      form.input :lng
-      form.input :category_ids, label: I18n.t('activerecord.attributes.place.categories'), as: :check_boxes, collection: Category.all
+      form.input :place_ids, label: I18n.t('activerecord.attributes.category.places'), as: :check_boxes, collection: Place.all
     end
     form.actions
   end
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :title, :description, :price, :duration, :schedule, :lat, :lng, category_ids: []
+  permit_params :title, :description, place_ids: []
   #
   # or
   #
