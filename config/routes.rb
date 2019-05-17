@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'places#index'
   # Default route (if unknown url)
-  match '*path' => redirect('/places'), via: [:get, :post]
-
+  match '*path' => redirect('/places'), via: %i[get post]
 end

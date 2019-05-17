@@ -9,8 +9,7 @@ class PlacesController < ApplicationController
 
   # GET /places/1
   # GET /places/1.json
-  def show
-  end
+  def show; end
 
   # GET /places/new
   def new
@@ -34,14 +33,14 @@ class PlacesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_place
-      @place = Place.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def place_params
-      params.require(:place).permit(:title, :description, :price, :duration, :schedule, :lat, :lng)
-    end
-    
+  # Use callbacks to share common setup or constraints between actions.
+  def set_place
+    @place = Place.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def place_params
+    params.require(:place).permit(:title, :description, :price, :duration, :schedule, :lat, :lng)
+  end
 end

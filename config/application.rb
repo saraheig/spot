@@ -17,7 +17,7 @@ module Spot
     # the framework and any gems in your application.
 
     # Configure the i18n: Locales available for the application
-    config.i18n.available_locales = [:en, :fr]
+    config.i18n.available_locales = %i[en fr]
     # Configure the i18n: Set default locale to :fr instead of :en
     config.i18n.default_locale = :fr
     # Configure time zone
