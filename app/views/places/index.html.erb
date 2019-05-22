@@ -20,7 +20,11 @@
           </div>
           <div class="media-right">
             <figure class="image is-128x128">
-              <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image">
+              <% if place.picture.attached? %>
+                <img src="https://s3-eu-west-1.amazonaws.com/yverdon-spot/<%= place.picture.key %>" alt="<%= place.picture.filename %>">
+              <% else %>
+                <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image">
+              <% end %>
             </figure>
           </div>
         </div>

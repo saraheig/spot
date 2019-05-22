@@ -1,5 +1,6 @@
 class Place < ApplicationRecord
   has_and_belongs_to_many :category, join_table: :places_categories
+  has_one_attached :picture
   before_validation :strip_blanks
 
   validates_presence_of :title

@@ -44,6 +44,9 @@ gem 'pundit', '~> 2.0', '>= 2.0.1'
 # Use Webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker', '~> 4.0', '>= 4.0'
 
+# Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3)
+gem 'aws-sdk-s3', '~> 1.40'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

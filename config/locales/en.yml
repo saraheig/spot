@@ -31,31 +31,32 @@
 
 en:
   activerecord:
-    models:
-      admin_user: "Administrators"
-      category: "Categories"
-      comment: "Comments"
-      place: "Places"
     attributes:
       category:
         created_at: "Created at"
-        title: "Title"
         description: "Description"
         place: "Place"
         places: "Place(s)"
+        title: "Title"
         updated_at: "Updated at"
       place:
         category: "Category"
         categories: "Category / categories"
         created_at: "Created at"
-        title: "Title"
         description: "Description"
-        price: "Price"
         duration: "Duration"
-        schedule: "Schedule"
         lat: "Latitude"
         lng: "Longitude"
+        picture: "Picture"
+        price: "Price"
+        schedule: "Schedule"
+        title: "Title"
         updated_at: "Updated at"
+    models:
+      admin_user: "Administrators"
+      category: "Categories"
+      comment: "Comments"
+      place: "Places"
   active_admin:
     dashboard_category: "All the categories"
     dashboard_place: "Last added / modified places"

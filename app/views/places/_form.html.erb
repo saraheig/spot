@@ -71,6 +71,13 @@
     </div>
   </div>
 
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.place.picture') %></label>
+    <div class="control">
+      <%= form.file_field :picture %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit t('buttons.create') %>
   </div>

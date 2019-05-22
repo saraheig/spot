@@ -1,30 +1,31 @@
 fr:
   activerecord:
-    models:
-      admin_user: "Administrateurs"
-      category: "Catégories"
-      comment: "Commentaires"
-      place: "Lieux d'intérêt"
     attributes:
       category:
         created_at: "Créé le"
-        title: "Titre"
         description: "Description"
         place: "Lieu d'intérêt"
         places: "Lieu(x) d'intérêt"
+        title: "Titre"
         updated_at: "Mis à jour le"
       place:
         category: "Catégorie"
         categories: "Catégorie(s)"
         created_at: "Créé le"
-        title: "Titre"
         description: "Description"
-        price: "Prix"
         duration: "Durée"
-        schedule: "Horaires"
         lat: "Latitude"
         lng: "Longitude"
+        picture: "Image"
+        price: "Prix"
+        schedule: "Horaires"
+        title: "Titre"
         updated_at: "Mis à jour le"
+    models:
+      admin_user: "Administrateurs"
+      category: "Catégories"
+      comment: "Commentaires"
+      place: "Lieux d'intérêt"
   active_admin:
     dashboard_category: "Toutes les catégories"
     dashboard_place: "Derniers lieux d'intérêt ajoutés / modifiés"
@@ -64,12 +65,12 @@ fr:
       other: "Enregistrement annulé : %{count} erreurs"
   general:
     title: "Lieux d'intérêt à Yverdon"
-  messages:
-    create: "La suggestion a été envoyée."
   menu:
     administration: "Interface administrateur"
     categories: "Filtrer les lieux par catégorie"
     spots: "Tous les lieux d'intérêt"
+  messages:
+    create: "La suggestion a été envoyée."
   place:
     duration_unit: "minutes"
     price_unit: "CHF"
