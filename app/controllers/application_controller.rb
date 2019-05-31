@@ -1,7 +1,16 @@
 class ApplicationController < ActionController::Base
-  before_action :set_locale
+  before_action :set_to_param_with_title, :set_locale
 
   private
+
+  # Override to_param for Responsive part (to_param is not the same as in the Administration part)
+  def set_to_param_with_title
+    Category.class_eval do
+      def to_param
+        title.downcase
+      end
+    end
+  end
 
   def set_locale
     logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"

@@ -11,32 +11,7 @@
   </head>
 
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <div class="title is-4">Spot</div>
-        </a>
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarSpot" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div class="navbar-menu" id="navbarSpot">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/"><%= t('menu.spots') %></a>
-          <div class="navbar-item has-dropdown dropdown is-hoverable" onclick="document.querySelector('.dropdown').classList.toggle('is-active');">
-            <a class="navbar-link is-arrowless"><%= t('menu.categories') %></a>
-            <div class="navbar-dropdown">
-              <% Category.all.each do |category| %>
-                <a class="navbar-item" href="/places?cat=<%= category.title %>"><%= category.title %></a>
-              <% end %>
-            </div>
-          </div>
-          <a class="navbar-item" href="/admin"><%= t('menu.administration') %></a>
-        </div>
-      </div>
-    </nav>
+    <%= render 'layouts/menu' %>
     <br>
     <%= yield %>
   </body>

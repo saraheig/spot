@@ -4,11 +4,9 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = if params[:cat]
-                Place.joins(:category).where('categories.title = ?', params[:cat]).order(:title)
-              else
-                Place.all.order(:title)
-              end
+    @category = Category.find_by('lower(title) = ?', params[:category])
+    @places = Place.order(:title)
+    @places = @places.by_category(@category) if @category
   end
 
   # GET /places/1

@@ -15,15 +15,15 @@ if Rails.env.development?
   )
 end
 
-PlacesCategory.delete_all
+CategoriesPlace.delete_all
 Place.delete_all
 Category.delete_all
 
 double_r = Place.create!(
   title: 'Le Double R',
   description: 'Bar & grill à Yverdon-les-Bains, le Double R propose de la cuisine américaine, des hamburgers. Végétarien-ne-s également les bienvenu-e-s !',
-  price: 25.00,
-  duration: 90,
+  price_chf: 25.00,
+  duration_minutes: 90,
   schedule: 'Heures d\'ouverture : 09:00-23:00',
   lat: 46.779951,
   lng: 6.637833
@@ -31,8 +31,8 @@ double_r = Place.create!(
 maison_ailleurs = Place.create!(
   title: 'La Maison d\'Ailleurs',
   description: 'Ce musée de la science-fiction, de l\'utopie et des voyages extraordinaires propose diverses expositions tout au lond de l\'année.',
-  price: 12.00,
-  duration: 120,
+  price_chf: 12.00,
+  duration_minutes: 120,
   schedule: 'Ma-di : 11:00-18:00',
   lat: 46.778594,
   lng: 6.641896
@@ -40,8 +40,8 @@ maison_ailleurs = Place.create!(
 numerik_games = Place.create!(
   title: 'Numerik Games Festival',
   description: 'Le Numerik Games Festival est dédié à l\'art et la culture numériques.',
-  price: 30.00,
-  duration: 180,
+  price_chf: 30.00,
+  duration_minutes: 180,
   schedule: 'Dates pour 2019 : 30 août au 1er septembre',
   lat: 46.766403,
   lng: 6.645001
@@ -60,16 +60,16 @@ musique = Category.create!(
   description: 'Quand la musique sonne, sonne, sonne...'
 )
 
-PlacesCategory.create!([{
-                         place: double_r,
-                         category: gastronomie
-                       }, {
-                         place: maison_ailleurs,
-                         category: culture
-                       }, {
-                         place: numerik_games,
-                         category: musique
-                       }, {
-                         place: numerik_games,
-                         category: culture
-                       }])
+CategoriesPlace.create!([{
+                          place: double_r,
+                          category: gastronomie
+                        }, {
+                          place: maison_ailleurs,
+                          category: culture
+                        }, {
+                          place: numerik_games,
+                          category: musique
+                        }, {
+                          place: numerik_games,
+                          category: culture
+                        }])

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_22_133521) do
+ActiveRecord::Schema.define(version: 2019_05_31_184745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,11 +70,20 @@ ActiveRecord::Schema.define(version: 2019_05_22_133521) do
     t.index ["title"], name: "index_categories_on_title", unique: true
   end
 
+  create_table "categories_places", force: :cascade do |t|
+    t.bigint "place_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_categories_places_on_category_id"
+    t.index ["place_id"], name: "index_categories_places_on_place_id"
+  end
+
   create_table "places", force: :cascade do |t|
     t.string "title", limit: 40
     t.text "description"
-    t.decimal "price", precision: 10, scale: 2
-    t.integer "duration", limit: 2
+    t.decimal "price_chf", precision: 10, scale: 2
+    t.integer "duration_minutes", limit: 2
     t.text "schedule"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "lng", precision: 10, scale: 6
@@ -83,16 +92,7 @@ ActiveRecord::Schema.define(version: 2019_05_22_133521) do
     t.index ["title"], name: "index_places_on_title", unique: true
   end
 
-  create_table "places_categories", force: :cascade do |t|
-    t.bigint "place_id"
-    t.bigint "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_places_categories_on_category_id"
-    t.index ["place_id"], name: "index_places_categories_on_place_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "places_categories", "categories"
-  add_foreign_key "places_categories", "places"
+  add_foreign_key "categories_places", "categories"
+  add_foreign_key "categories_places", "places"
 end
