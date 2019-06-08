@@ -25,7 +25,6 @@ class PlacesController < ApplicationController
 
     respond_to do |format|
       if @place.save
-        @place.picture.attach(params[:place][:picture])
         format.html { redirect_to @place, notice: t('messages.create') }
         format.json { render :show, status: :created, location: @place }
       else
@@ -44,6 +43,6 @@ class PlacesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def place_params
-    params.require(:place).permit(:title, :description, :price, :duration, :schedule, :lat, :lng, :picture, category_ids: [])
+    params.require(:place).permit(:title, :description, :price_chf, :duration_minutes, :schedule, :lat, :lng, :image, category_ids: [])
   end
 end

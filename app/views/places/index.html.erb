@@ -23,10 +23,10 @@
           </div>
           <div class="media-right">
             <figure class="image is-128x128">
-              <% if place.picture.attached? %>
-                <img src="https://s3-eu-west-1.amazonaws.com/yverdon-spot/<%= place.picture.key %>" alt="<%= place.picture.filename %>">
+              <% if place.image.attached? %>
+                <%= image_tag place.image, :class => "is-rounded" %>
               <% else %>
-                <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image">
+                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image">
               <% end %>
             </figure>
           </div>

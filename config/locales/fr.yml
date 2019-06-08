@@ -14,6 +14,7 @@ fr:
         created_at: "Créé le"
         description: "Description"
         duration_minutes: "Durée"
+        image: "Image"
         lat: "Latitude"
         lng: "Longitude"
         picture: "Image"
@@ -64,6 +65,8 @@ fr:
       one: "Enregistrement annulé : 1 erreur"
       other: "Enregistrement annulé : %{count} erreurs"
   general:
+    additional_information: "Informations supplémentaires"
+    general_information: "Informations générales"
     title: "Lieux d'intérêt à Yverdon"
   menu:
     administration: "Interface administrateur"
@@ -71,6 +74,8 @@ fr:
     spots: "Tous les lieux d'intérêt"
   messages:
     create: "La suggestion a été envoyée."
+    delete: "Supprimer cette image"
+    sure: "Etes-vous sûr ?"
   place:
     duration_unit: "minutes"
     price_unit: "CHF"

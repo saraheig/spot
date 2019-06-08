@@ -45,6 +45,7 @@ en:
         created_at: "Created at"
         description: "Description"
         duration_minutes: "Duration"
+        image: "Image"
         lat: "Latitude"
         lng: "Longitude"
         picture: "Picture"
@@ -95,9 +96,13 @@ en:
       one: "Cancelled registration: 1 error"
       other: "Cancelled registration: %{count} errors"
   general:
+    additional_information: "More information"
+    general_information: "General information"
     title: "Spots of Yverdon"
   messages:
     create: "The suggestion has been send."
+    delete: "Delete this image"
+    sure: "Are you sure?"
   menu:
     administration: "Administrator interface"
     categories: "Filter the spots by category"

@@ -1,14 +1,16 @@
 <%= form_with(model: place, local: true) do |form| %>
   <% if place.errors.any? %>
     <div id="error_explanation">
-      <h2><%= t('errors.template', :count => place.errors.count) %></h2>
+      <div class="title is-5"><%= t('errors.template', :count => place.errors.count) %></div>
       <ul>
-      <% place.errors.full_messages.each do |message| %>
+        <% place.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
   <% end %>
+
+  <br><div class="title is-5"><%= t('general.general_information') %></div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.title') %></label>
@@ -18,11 +20,30 @@
   </div>
 
   <div class="field">
-    <label class="label"><%= t('activerecord.attributes.place.description') %></label>
+    <label class="label"><%= t('activerecord.attributes.place.image') %></label>
     <div class="control">
-      <%= form.text_area :description %>
+      <% if form.object.image.attached? %>
+        <%= image_tag form.object.image %>
+        <%= form.hidden_field :image, value: form.object.image.signed_id %>
+      <% else %>
+        <%= form.file_field :image %>
+      <% end %>
     </div>
   </div>
+
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.place.categories') %></label>
+    <div class="control">
+      <% for category in Category.all %>
+        <div>
+          <%= check_box_tag "place[category_ids][]", category.id %>
+          <%= category.title %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <br><div class="title is-5"><%= t('general.additional_information') %></div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.price') %> [<%= t('place.price_unit') %>]</label>
@@ -46,6 +67,13 @@
   </div>
 
   <div class="field">
+    <label class="label"><%= t('activerecord.attributes.place.description') %></label>
+    <div class="control">
+      <%= form.text_area :description %>
+    </div>
+  </div>
+
+  <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.lat') %></label>
     <div class="control">
       <%= form.text_field :lat %>
@@ -57,26 +85,7 @@
     <div class="control">
       <%= form.text_field :lng %>
     </div>
-  </div>
-
-  <div class="field">
-    <label class="label"><%= t('activerecord.attributes.place.categories') %></label>
-    <div class="control">
-      <% for category in Category.all %>
-        <div>
-          <%= check_box_tag "place[category_ids][]", category.id %>
-          <%= category.title %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label"><%= t('activerecord.attributes.place.picture') %></label>
-    <div class="control">
-      <%= form.file_field :picture %>
-    </div>
-  </div>
+  </div><br>
 
   <div class="actions">
     <%= form.submit t('buttons.create') %>

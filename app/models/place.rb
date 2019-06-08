@@ -1,6 +1,6 @@
 class Place < ApplicationRecord
+  has_one_attached :image
   has_and_belongs_to_many :categories
-  has_one_attached :picture
 
   validates_presence_of :title
   validates_length_of :title, maximum: 40
