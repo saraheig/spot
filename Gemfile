@@ -47,6 +47,12 @@ gem 'webpacker', '~> 4.0', '>= 4.0'
 # Official AWS Ruby gem for Amazon Simple Storage Service (Amazon S3)
 gem 'aws-sdk-s3', '~> 1.40'
 
+# Ruby client library for Travis CI
+gem 'travis', '~> 1.8', '>= 1.8.10'
+
+# Rails internals (application bootup, plugins, generators, rake tasks)
+gem 'railties', '~> 5.2', '>= 5.2.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -73,6 +79,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  # Make-like program implemented in Ruby (Travis CI)
+  gem 'rake', '~> 12.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
