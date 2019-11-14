@@ -89,6 +89,7 @@ en:
       too_short:
         one: "must be longer (minimum is 1 character)"
         other: "must be longer (minimum is %{count} characters)"
+      wrong_format: "must have some alpha characters (no numbers, no spaces, no special characters)"
       wrong_length:
         one: "is the wrong length (should be 1 character)"
         other: "is the wrong length (should be %{count} characters)"

@@ -58,6 +58,7 @@ fr:
       too_short:
         one: "doit être plus long (au moins un caractère)"
         other: "doit être plus long (au moins %{count} caractères)"
+      wrong_format: "doit avoir des lettres (pas de chiffres, pas d'espaces, pas de caractères spéciaux)"
       wrong_length:
         one: "ne fait pas la bonne longueur (doit comporter un seul caractère)"
         other: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"

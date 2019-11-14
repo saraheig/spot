@@ -62,8 +62,6 @@ group :development, :test do
   gem 'rubocop-rspec', '~> 1.32'
   # Collection of RuboCop cops to check performance optimizations in Ruby code
   gem 'rubocop-performance', '~> 1.1'
-  # BDD for Ruby
-  gem 'rspec', '~> 3.9'
 end
 
 group :development do
@@ -78,9 +76,10 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # WebDrive to write automated tests of websites
+  gem 'selenium-webdriver', '~> 3.142', '>= 3.142.6'
+  # Easy installation and use of chromedriver to run system tests with Chrome -> deprecated
+  # gem 'chromedriver-helper'
   # Make-like program implemented in Ruby (Travis CI)
   gem 'rake', '~> 12.3'
 end
