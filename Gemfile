@@ -62,8 +62,6 @@ group :development, :test do
   gem 'rubocop-rspec', '~> 1.32'
   # Collection of RuboCop cops to check performance optimizations in Ruby code
   gem 'rubocop-performance', '~> 1.1'
-  # BDD for Ruby
-  gem 'rspec', '~> 3.9'
 end
 
 group :development do

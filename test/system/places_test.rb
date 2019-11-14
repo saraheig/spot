@@ -15,10 +15,10 @@ class PlacesTest < ApplicationSystemTestCase
     click_on 'New Place'
 
     fill_in 'Description', with: @place.description
-    fill_in 'Duration', with: @place.duration
+    fill_in 'Duration', with: @place.duration_minutes
     fill_in 'Lat', with: @place.lat
     fill_in 'Lng', with: @place.lng
-    fill_in 'Price', with: @place.price
+    fill_in 'Price', with: @place.price_chf
     fill_in 'Schedule', with: @place.schedule
     fill_in 'Title', with: @place.title
     click_on 'Create Place'
@@ -32,10 +32,10 @@ class PlacesTest < ApplicationSystemTestCase
     click_on 'Edit', match: :first
 
     fill_in 'Description', with: @place.description
-    fill_in 'Duration', with: @place.duration
+    fill_in 'Duration', with: @place.duration_minutes
     fill_in 'Lat', with: @place.lat
     fill_in 'Lng', with: @place.lng
-    fill_in 'Price', with: @place.price
+    fill_in 'Price', with: @place.price_chf
     fill_in 'Schedule', with: @place.schedule
     fill_in 'Title', with: @place.title
     click_on 'Update Place'

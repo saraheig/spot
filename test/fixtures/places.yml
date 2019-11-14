@@ -1,19 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  price: 
-  duration: 1
-  schedule: MyText
-  lat: 
-  lng: 
+placeOne:
+  title: MyStringPlaceOne
+  description: MyTextPlaceOne
+  price_chf:
+  duration_minutes: 1
+  schedule: MyTextPlaceOne
+  lat: 46
+  lng: 10
+  categories: categoryOne
 
-two:
-  title: MyString
-  description: MyText
-  price: 
-  duration: 1
-  schedule: MyText
-  lat: 
-  lng: 
+placeTwo:
+  title: MyStringPlaceTwo
+  description: MyTextPlaceTwo
+  price_chf:
+  duration_minutes: 1
+  schedule: MyTextPlaceTwo
+  lat: 46
+  lng: 10
+  categories: categoryTwo
