@@ -53,6 +53,9 @@ gem 'aws-sdk-s3', '~> 1.40'
 # Ruby client library for Travis CI
 gem 'travis', '~> 1.8', '>= 1.8.10'
 
+# Ruby implementation of the Coveralls API
+gem 'coveralls', require: false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
