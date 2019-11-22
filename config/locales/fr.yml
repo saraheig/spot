@@ -72,6 +72,7 @@ fr:
   menu:
     administration: "Interface administrateur"
     categories: "Filtrer les lieux par catégorie"
+    spot: "Proposer un nouveau lieu"
     spots: "Tous les lieux d'intérêt"
   messages:
     create: "La suggestion a été envoyée."

@@ -107,6 +107,7 @@ en:
   menu:
     administration: "Administrator interface"
     categories: "Filter the spots by category"
+    spot: "Purpose a new spot"
     spots: "All spots"
   place:
     duration_unit: "minutes"

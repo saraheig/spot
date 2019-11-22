@@ -1,11 +1,14 @@
 language: ruby
 
-script:
+before_script:
   - bundle install
   - bundle exec rake assets:precompile
   - bundle exec rake db:create
   - bundle exec rake db:migrate
+
+script:
   - bundle exec rake test
+  - bundle exec rake test:system
 
 services:
   - postgresql

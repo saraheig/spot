@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 categoryOne:
+  id: 1
   title: MyStringCategoryOne
   description: MyTextCategoryOne
-  places: placeOne
 
 categoryTwo:
+  id: 2
   title: MyStringCategoryTwo
   description: MyTextCategoryTwo
-  places: placeTwo
+
+categoryThree:
+  id: 3
+  title: MyStringCategoryThr
+  description: MyTextCategoryThree
