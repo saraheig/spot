@@ -12,3 +12,6 @@ script:
 
 services:
   - postgresql
+
+addons:
+  chrome: stable
