@@ -33,5 +33,6 @@
 yarn-debug.log*
 .yarn-integrity
 /.sass-lint.yml
+/coverage
 
 .rubocop.yml

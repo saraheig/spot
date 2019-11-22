@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+placeOne_categoryOne:
+  place_id: 1
+  category_id: 1
+
+placeTwo_categoryOne:
+  place_id: 2
+  category_id: 1
+
+placeTwo_categoryTwo:
+  place_id: 2
+  category_id: 2
+
+placeThree_categoryTwo:
+  place_id: 3
+  category_id: 2
+
+placeThree_categoryThree:
+  place_id: 3
+  category_id: 3

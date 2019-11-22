@@ -1,11 +1,20 @@
+branches:
+  only: master
+
 language: ruby
 
-script:
+addons:
+  chrome: stable
+
+services:
+  - postgresql
+
+before_script:
   - bundle install
   - bundle exec rake assets:precompile
   - bundle exec rake db:create
   - bundle exec rake db:migrate
-  - bundle exec rake test
 
-services:
-  - postgresql
+script:
+  - bundle exec rake test
+  - bundle exec rake test:system

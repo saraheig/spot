@@ -7,10 +7,10 @@ class Category < ApplicationRecord
 
   # Functions to remove spaces in the string and text fields
   def title=(title)
-    self[:title] = title.strip
+    self[:title] = title.strip if title
   end
 
   def description=(description)
-    self[:description] = description.strip
+    self[:description] = description.strip if description
   end
 end
