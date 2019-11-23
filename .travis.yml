@@ -8,6 +8,7 @@ services:
 
 before_install:
   - google-chrome-stable --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - webdriver-manager update --versions.chrome 2.37
 
 before_script:
   - bundle install
