@@ -9,7 +9,13 @@ services:
   - postgresql
 
 before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &⋮
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+
+install:
+  - yarn install
+
+cache:
+  yarn: true
 
 before_script:
   - bundle install
@@ -18,5 +24,6 @@ before_script:
   - bundle exec rake db:migrate
 
 script:
+  - yarn test
   - bundle exec rake test
   - bundle exec rake test:system
