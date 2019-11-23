@@ -1,13 +1,10 @@
 language: ruby
 
 addons:
-  - google-chrome-stable
+  - google-chrome-stable --headless
 
 services:
   - postgresql
-
-before_install:
-  - google-chrome-stable --headless --no-sandbox --disable-dev-shm-usage
 
 before_script:
   - bundle install
