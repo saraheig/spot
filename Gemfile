@@ -40,7 +40,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Administration framework for Ruby on Rails
 gem 'activeadmin', '~> 1.4', '>= 1.4.3'
 gem 'cancancan', '~> 3.0'
-gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'devise', '~> 4.7'
 gem 'draper', '~> 3.1'
 gem 'pundit', '~> 2.0', '>= 2.0.1'
 
