@@ -84,7 +84,6 @@ group :test do
   gem 'webdrivers', '~> 4.0'
   # Make-like program implemented in Ruby (Travis CI)
   gem 'rake', '~> 12.3'
-  gem 'capybara-selenium', '~> 0.0.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
