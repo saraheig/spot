@@ -6,14 +6,13 @@ language: ruby
 dist: trusty
 
 addons:
-  apt:
-    - google-chrome-stable
-    - chromium-chromedriver
+  chrome: stable
 
 services:
   - postgresql
 
 before_script:
+  - export CHROME_BIN=chromium-browser
   - bundle install
   - bundle exec rake assets:precompile
   - bundle exec rake db:create
