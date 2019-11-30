@@ -4,9 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0', '>= 6.0.1'
 # Rails internals (application bootup, plugins, generators, rake tasks)
-gem 'railties', '~> 5.2', '>= 5.2.3'
+gem 'railties', '~> 6.0', '>= 6.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -38,11 +38,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Administration framework for Ruby on Rails
-gem 'activeadmin', '~> 1.4', '>= 1.4.3'
-gem 'cancancan', '~> 3.0'
-gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'activeadmin', '~> 2.4'
+gem 'cancancan', '~> 3.0', '>= 3.0.1'
+gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'draper', '~> 3.1'
-gem 'pundit', '~> 2.0', '>= 2.0.1'
+gem 'pundit', '~> 2.1'
 
 # Use Webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker', '~> 4.0', '>= 4.0'
@@ -60,11 +60,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Automatic Ruby code style checking tool
-  gem 'rubocop', '~> 0.67.2'
+  gem 'rubocop', '~> 0.76.0'
   # Code style checking for RSpec files
-  gem 'rubocop-rspec', '~> 1.32'
+  gem 'rubocop-rspec', '~> 1.37'
   # Collection of RuboCop cops to check performance optimizations in Ruby code
-  gem 'rubocop-performance', '~> 1.1'
+  gem 'rubocop-performance', '~> 1.5', '>= 1.5.1'
 end
 
 group :development do
@@ -78,12 +78,12 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver with Chrome
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '~> 3.29'
   # WebDrive to write automated tests of websites
   gem 'selenium-webdriver', '~> 3.142', '>= 3.142.6'
   gem 'webdrivers', '~> 4.0'
   # Make-like program implemented in Ruby (Travis CI)
-  gem 'rake', '~> 12.3'
+  gem 'rake', '~> 13.0', '>= 13.0.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -36,3 +36,6 @@ yarn-debug.log*
 /coverage
 
 .rubocop.yml
+
+# Ignore file related to Rails upgrade from 5.2 to 6.0
+/config/initializers/new_framework_defaults_6_0.rb

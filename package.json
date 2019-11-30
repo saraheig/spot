@@ -2,10 +2,14 @@
   "name": "spot",
   "private": true,
   "dependencies": {
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "^4.0.2",
-    "activestorage": "^5.2.3",
-    "bulma": "^0.7.4",
-    "rails-ujs": "^5.2.3",
+    "bulma": "^0.8.0",
+    "lodash": "4.17.15",
+    "lodash.template": "4.5.0",
+    "mixin-deep": "2.0.1",
+    "node": "8.16.0",
     "turbolinks": "^5.2.0"
   },
   "devDependencies": {
