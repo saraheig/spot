@@ -10,7 +10,8 @@
     "lodash.template": "4.5.0",
     "mixin-deep": "2.0.1",
     "node": "8.16.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.41.2"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.3.1"
