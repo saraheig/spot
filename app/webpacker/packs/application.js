@@ -17,13 +17,13 @@
 
 console.log('Hello World from Webpacker');
 
-import * as ActiveStorage from 'activestorage';
+import * as ActiveStorage from '@rails/activestorage';
 ActiveStorage.start();
 
 import Turbolinks from 'turbolinks';
 Turbolinks.start();
 
-import Rails from 'rails-ujs';
+import Rails from '@rails/ujs';
 Rails.start();
 
 import '../scss/application';
