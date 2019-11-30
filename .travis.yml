@@ -11,8 +11,8 @@ services:
 
 before_script:
   - bundle install
-  - nvm install 12
-  - bundle exec rake webpacker:compile
+  - nvm install 8
+  - bundle exec rake assets:precompile
   - bundle exec rake db:create
   - bundle exec rake db:migrate
 
