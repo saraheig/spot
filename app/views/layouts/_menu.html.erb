@@ -16,7 +16,7 @@
         <a class="navbar-link is-arrowless"><%= t('menu.categories') %></a>
         <div class="navbar-dropdown">
           <% Category.all.each do |category| %>
-            <a class="navbar-item" href="<%= places_by_category_path(category: category.title.downcase) %>"><%= category.title %></a>
+            <a class="navbar-item" href="<%= places_by_category_path(category: category.titles['en'].downcase) %>"><%= category.title %></a>
           <% end %>
         </div>
       </div>

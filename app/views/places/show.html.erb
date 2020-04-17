@@ -15,14 +15,22 @@
   </div>
   <div class="card-content">
     <div class="content">
-      <p class="subtitle is-5"><%= t('place.price') %></p>
-      <p><%= @place.price_chf %>  <%= t('place.price_unit') %></p>
-      <p class="subtitle is-5"><%= t('place.duration') %></p>
-      <p><%= @place.duration_minutes %>  <%= t('place.duration_unit') %></p>
-      <p class="subtitle is-5"><%= t('place.schedule') %></p>
-      <p><%= @place.schedule %></p>
-      <p class="subtitle is-5"><%= t('place.description') %></p>
-      <p><%= @place.description %></p>
+      <% if @place.price_chf %>
+        <p class="subtitle is-5"><%= t('place.price') %></p>
+        <p><%= @place.price_chf %>  <%= t('place.price_unit') %></p>
+      <% end %>
+      <% if @place.duration_minutes %>
+        <p class="subtitle is-5"><%= t('place.duration') %></p>
+        <p><%= @place.duration_minutes %>  <%= t('place.duration_unit') %></p>
+      <% end %>
+      <% if @place.schedule %>
+        <p class="subtitle is-5"><%= t('place.schedule') %></p>
+        <p><%= @place.schedule %></p>
+      <% end %>
+      <% if @place.description %>
+        <p class="subtitle is-5"><%= t('place.description') %></p>
+        <p><%= @place.description %></p>
+      <% end %>
     </div>
   </div>
 </div>

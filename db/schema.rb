@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_161629) do
+ActiveRecord::Schema.define(version: 2020_04_14_214848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,11 +63,11 @@ ActiveRecord::Schema.define(version: 2019_11_26_161629) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "title", limit: 20
-    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["title"], name: "index_categories_on_title", unique: true
+    t.jsonb "titles", default: {}, null: false
+    t.jsonb "descriptions", default: {}
+    t.index ["titles"], name: "index_categories_on_titles"
   end
 
   create_table "categories_places", id: false, force: :cascade do |t|
@@ -77,17 +77,24 @@ ActiveRecord::Schema.define(version: 2019_11_26_161629) do
     t.index ["place_id"], name: "index_categories_places_on_place_id"
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.string "name", limit: 20
+    t.string "code", limit: 5
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "places", force: :cascade do |t|
-    t.string "title", limit: 40
-    t.text "description"
     t.decimal "price_chf", precision: 10, scale: 2
     t.integer "duration_minutes", limit: 2
-    t.text "schedule"
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "lng", precision: 10, scale: 6
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["title"], name: "index_places_on_title", unique: true
+    t.jsonb "titles", default: {}, null: false
+    t.jsonb "descriptions", default: {}
+    t.jsonb "schedules", default: {}
+    t.index ["titles"], name: "index_places_on_titles"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

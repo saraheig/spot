@@ -1,0 +1,9 @@
+<%= form_with url: languages_path do |form| %>
+  <div class="field">
+    <%= form.select :code, Language.all.collect { |language| [language.name, language.code] }, :selected => cookies[:language] %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t('buttons.validate') %>
+  </div>
+<% end %>

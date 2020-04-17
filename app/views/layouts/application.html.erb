@@ -14,5 +14,6 @@
     <%= render 'layouts/menu' %>
     <br>
     <%= yield %>
+    <%= render 'layouts/footer' unless controller_name == 'languages' && action_name == 'new' %>
   </body>
 </html>

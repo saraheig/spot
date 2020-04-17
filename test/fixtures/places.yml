@@ -2,30 +2,30 @@
 
 placeOne:
   id: 1
-  title: MyStringPlaceOne
-  description: MyTextPlaceOne
+  titles: { 'en': 'MyStringPlaceOne', 'fr': 'MonStringLieuUn' }
+  descriptions: { 'en': 'MyTextPlaceOne', 'fr': 'MonTextLieuUn' }
   price_chf:
   duration_minutes: 1
-  schedule: MyTextPlaceOne
+  schedules: { 'en': 'MyTextPlaceOne', 'fr': 'MonTextLieuUn' }
   lat: 46.1
   lng: 10.1
 
 placeTwo:
   id: 2
-  title: MyStringPlaceTwo
-  description: MyTextPlaceTwo
+  titles: { 'en': 'MyStringPlaceTwo', 'fr': 'MonStringLieuDeux' }
+  descriptions: { 'en': 'MyTextPlaceTwo', 'fr': 'MonTextLieuDeux' }
   price_chf:
   duration_minutes: 1
-  schedule: MyTextPlaceTwo
+  schedules: { 'en': 'MyTextPlaceTwo', 'fr': 'MonTextLieuDeux' }
   lat: 46.2
   lng: 10.2
 
 placeThree:
   id: 3
-  title: MyStringPlaceThr
-  description: MyTextPlaceThree
+  titles: { 'en': 'MyStringPlaceThr', 'fr': 'MonStringLieuTrois' }
+  descriptions: { 'en': 'MyTextPlaceThree', 'fr': 'MonTextLieuTrois' }
   price_chf:
   duration_minutes: 1
-  schedule: MyTextPlaceThree
+  schedules: { 'en': 'MyTextPlaceThree', 'fr': 'MonTextLieuTrois' }
   lat: 46.3
   lng: 10.3

@@ -15,61 +15,115 @@ if Rails.env.development?
   )
 end
 
+Language.delete_all
 CategoriesPlace.delete_all
 Place.delete_all
 Category.delete_all
 
 double_r = Place.create!(
-  title: 'Le Double R',
-  description: 'Bar & grill à Yverdon-les-Bains, le Double R propose de la cuisine américaine, des hamburgers. Végétarien-ne-s également les bienvenu-e-s !',
+  titles: {
+    'en' => 'Double R',
+    'fr' => 'Double R'
+  },
+  descriptions: {
+    'en' => 'This restaurant offers American cuisine (burgers). Vegetarians are also welcome!',
+    'fr' => 'Bar & grill à Yverdon-les-Bains, le Double R propose de la cuisine américaine, des hamburgers. Végétarien-ne-s également les bienvenu-e-s !'
+  },
   price_chf: 25.00,
   duration_minutes: 90,
-  schedule: 'Heures d\'ouverture : 09:00-23:00',
+  schedules: {
+    'en' => 'Opening hours: 09:00-23:00',
+    'fr' => 'Heures d\'ouverture : 09:00-23:00'
+  },
   lat: 46.779951,
   lng: 6.637833
 )
 maison_ailleurs = Place.create!(
-  title: 'La Maison d\'Ailleurs',
-  description: 'Ce musée de la science-fiction, de l\'utopie et des voyages extraordinaires propose diverses expositions tout au lond de l\'année.',
+  titles: {
+    'en' => 'Maison d\'Ailleurs',
+    'fr' => 'La Maison d\'Ailleurs'
+  },
+  descriptions: {
+    'en' => 'This museum of science fiction, utopia and extraordinary trips offers various exhibitions throughout the year.',
+    'fr' => 'Ce musée de la science-fiction, de l\'utopie et des voyages extraordinaires propose diverses expositions tout au long de l\'année.'
+  },
   price_chf: 12.00,
   duration_minutes: 120,
-  schedule: 'Ma-di : 11:00-18:00',
+  schedules: {
+    'en' => 'Mon.-Sun.: 11:00-18:00',
+    'fr' => 'Ma-di : 11:00-18:00'
+  },
   lat: 46.778594,
   lng: 6.641896
 )
 numerik_games = Place.create!(
-  title: 'Numerik Games Festival',
-  description: 'Le Numerik Games Festival est dédié à l\'art et la culture numériques.',
+  titles: {
+    'en' => 'Numerik Games Festival',
+    'fr' => 'Festival Numerik Games'
+  },
+  descriptions: {
+    'en' => 'The Numerik Games festival is related to digital art.',
+    'fr' => 'Le festival Numerik Games est dédié à l\'art et la culture numériques.'
+  },
   price_chf: 30.00,
   duration_minutes: 180,
-  schedule: 'Dates pour 2019 : 30 août au 1er septembre',
+  schedules: {
+    'en' => '28-30 August 2020',
+    'fr' => '28-30 août 2020'
+  },
   lat: 46.766403,
   lng: 6.645001
 )
 
-gastronomie = Category.create!(
-  title: 'Gastronomie',
-  description: 'Des lieux pour honorer son estomac...'
+gastronomy = Category.create!(
+  titles: {
+    'en' => 'Gastronomy',
+    'fr' => 'Gastronomie'
+  },
+  descriptions: {
+    'en' => 'Places to honor your stomach...',
+    'fr' => 'Des lieux pour honorer son estomac...'
+  }
 )
-culture = Category.create!(
-  title: 'Culture',
-  description: 'Des lieux pour nourrir son cerveau...'
+education = Category.create!(
+  titles: {
+    'en' => 'Education',
+    'fr' => 'Culture'
+  },
+  descriptions: {
+    'en' => 'Places to feed your brain...',
+    'fr' => 'Des lieux pour nourrir son cerveau...'
+  }
 )
-musique = Category.create!(
-  title: 'Musique',
-  description: 'Quand la musique sonne, sonne, sonne...'
+music = Category.create!(
+  titles: {
+    'en' => 'Music',
+    'fr' => 'Musique'
+  },
+  descriptions: {
+    'en' => 'When the music rings, rings, rings...',
+    'fr' => 'Quand la musique sonne, sonne, sonne...'
+  }
 )
 
 CategoriesPlace.create!([{
                           place: double_r,
-                          category: gastronomie
+                          category: gastronomy
                         }, {
                           place: maison_ailleurs,
-                          category: culture
+                          category: education
                         }, {
                           place: numerik_games,
-                          category: musique
+                          category: music
                         }, {
                           place: numerik_games,
-                          category: culture
+                          category: education
                         }])
+
+Language.create!([{
+                   name: 'Français',
+                   code: 'fr'
+                 }, {
+                   name: 'English',
+                   code: 'en'
+                 }])

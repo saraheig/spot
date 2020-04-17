@@ -12,14 +12,26 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Set the language
   def set_locale
     logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
-    # Get the language of the browser using the safe navigation operator
-    header_locale = request.env['HTTP_ACCEPT_LANGUAGE']&.scan(/^[a-z]{2}/)&.first&.to_sym
-    if I18n.available_locales.include? header_locale
-      # Get the language of the browser only if it is in the available_locales of the app
-      I18n.locale = header_locale
+    # Get the language from the user choice (form)
+    if cookies[:language]
+      I18n.locale = cookies[:language]
+      logger.debug "* Locale set to '#{I18n.locale}' (user choice)"
+    # Get the language from the browser using the safe navigation operator
+    else
+      header_locale = request.env['HTTP_ACCEPT_LANGUAGE']&.scan(/^[a-z]{2}/)&.first&.to_sym
+      if I18n.available_locales.include? header_locale
+        # Get the language from the browser only if it is in the available_locales of the app
+        I18n.locale = header_locale
+        cookies[:language] = header_locale
+        logger.debug "* Locale set to '#{I18n.locale}' (browser header)"
+      else
+        # Get the default language if the asked language is not available
+        cookies[:language] = I18n.default_locale
+        logger.debug "* Locale set to '#{I18n.locale}' (default value)"
+      end
     end
-    logger.debug "* Locale set to '#{I18n.locale}'"
   end
 end

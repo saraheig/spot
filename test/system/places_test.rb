@@ -44,8 +44,16 @@ class PlacesTest < ApplicationSystemTestCase
     find(:css, 'a.navbar-burger').click
     # Filter with a specific category
     click_on @category.title
-    assert_selector 'div.subtitle.is-6', text: @category.title.downcase
+    assert_selector 'div.subtitle.is-6', text: @category.title
     # Check the number of cards (-> places) for the category
     assert_selector 'div.card', count: 2
+  end
+
+  test 'modifying the language' do
+    visit places_url
+    click_on I18n.t('buttons.language')
+    assert_selector 'div.title.is-4', text: I18n.t('language.choice')
+    page.select 'MyStrLanFr', from: 'code'
+    click_on I18n.t('buttons.validate')
   end
 end

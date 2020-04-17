@@ -4,8 +4,8 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @category = Category.find_by('lower(title) = ?', params[:category])
-    @places = Place.order(:title)
+    @category = Category.find_by("lower(categories.titles ->> 'en') = ''".insert(-2, params[:category].to_s))
+    @places = Place.order_by_title.title_not_eq('')
     @places = @places.by_category(@category) if @category
   end
 

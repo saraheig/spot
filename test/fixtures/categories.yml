@@ -2,15 +2,15 @@
 
 categoryOne:
   id: 1
-  title: MyStringCategoryOne
-  description: MyTextCategoryOne
+  titles: { 'en': 'MyStringCategoryOne', 'fr': 'MaStringCategorieUn' }
+  descriptions: { 'en': 'MyTextCategoryOne', 'fr': 'MaTextCategorieUn' }
 
 categoryTwo:
   id: 2
-  title: MyStringCategoryTwo
-  description: MyTextCategoryTwo
+  titles: { 'en': 'MyStringCategoryTwo', 'fr': 'MaStringCategorieDeux' }
+  descriptions: { 'en': 'MyTextCategoryTwo', 'fr': 'MaTextCategorieDeux' }
 
 categoryThree:
   id: 3
-  title: MyStringCategoryThr
-  description: MyTextCategoryThree
+  titles: { 'en': 'MyStringCategoryThr', 'fr': 'MaStringCategorieTrois' }
+  descriptions: { 'en': 'MyTextCategoryThree', 'fr': 'MaTextCategorieTrois' }

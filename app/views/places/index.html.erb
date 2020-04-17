@@ -2,7 +2,8 @@
 
 <div class="title is-4 has-text-centered"><%= t('general.title') %></div>
 <% if params[:category] %>
-  <div class="subtitle is-6 has-text-centered"><%= t('activerecord.attributes.place.category') %> : <%= params[:category] %></div>
+  <div class="subtitle is-6 has-text-centered"><%= t('activerecord.attributes.place.category') %> : <%= @category.titles[cookies[:language]] %>
+  </div>
 <% end %>
 <% if false %>
   <div class="button is-info">
@@ -32,10 +33,12 @@
           </div>
         </div>
       </div>
-      <footer class="card-footer">
-        <div class="card-footer-item"><%= place.price_chf %> <%= t('place.price_unit') %></div>
-        <div class="card-footer-item"><%= place.duration_minutes %> <%= t('place.duration_unit') %></div>
-      </footer>
+      <% if place.price_chf || place.duration_minutes %>
+        <footer class="card-footer">
+          <div class="card-footer-item"><%= place.price_chf %> <%= t('place.price_unit') if place.price_chf %></div>
+          <div class="card-footer-item"><%= place.duration_minutes %> <%= t('place.duration_unit') if place.duration_minutes %></div>
+        </footer>
+      <% end %>
     <% end %>
   </div>
 <% end %>

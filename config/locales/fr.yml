@@ -5,6 +5,7 @@ fr:
         created_at: "Créé le"
         description: "Description"
         place: "Lieu d'intérêt"
+        place_ids: "Lieu(x) d'intérêt"
         places: "Lieu(x) d'intérêt"
         title: "Titre"
         updated_at: "Mis à jour le"
@@ -34,8 +35,13 @@ fr:
     back: "Retour"
     cancel: "Annuler"
     create: "Envoyer cette suggestion"
+    language: "Modifier la langue"
     new: "Suggérer un nouveau lieu d'intérêt"
     show: "Voir ce lieu d'intérêt"
+    validate: "Valider"
+  category:
+    description: "Description"
+    title: "Titre"
   errors:
     format: "Le champ \"%{attribute}\" %{message}."
     messages:
@@ -69,6 +75,10 @@ fr:
     additional_information: "Informations supplémentaires"
     general_information: "Informations générales"
     title: "Lieux d'intérêt à Yverdon"
+  language:
+    choice: "Choix de la langue"
+    en: "Anglais"
+    fr: "Français"
   menu:
     administration: "Interface administrateur"
     categories: "Filtrer les lieux par catégorie"
@@ -79,9 +89,14 @@ fr:
     delete: "Supprimer cette image"
     sure: "Etes-vous sûr ?"
   place:
+    description: "Description"
+    duration: "Durée"
     duration_unit: "minutes"
+    price: "Prix"
     price_unit: "CHF"
+    schedule: "Horaires"
     suggestion: "Suggestion d'un nouveau lieu d'intérêt"
+    title: "Titre"
   time:
     formats:
       long: "%d.%m.%Y - %Hh%M"

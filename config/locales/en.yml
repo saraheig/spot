@@ -36,6 +36,7 @@ en:
         created_at: "Created at"
         description: "Description"
         place: "Place"
+        place_ids: "Place(s)"
         places: "Place(s)"
         title: "Title"
         updated_at: "Updated at"
@@ -63,10 +64,15 @@ en:
     dashboard_place: "Last added / modified places"
   buttons:
     back: "Back"
-    cancel: "Annuler"
+    cancel: "Cancel"
     create: "Send this suggestion"
+    language: "Modify the language"
     new: "Suggest a new place"
     show: "Show this place"
+    validate: "Validate"
+  category:
+    description: "Description"
+    title: "Title"
   errors:
     format: "The field \"%{attribute}\" %{message}."
     messages:
@@ -100,19 +106,28 @@ en:
     additional_information: "More information"
     general_information: "General information"
     title: "Spots of Yverdon"
-  messages:
-    create: "The suggestion has been send."
-    delete: "Delete this image"
-    sure: "Are you sure?"
+  language:
+    choice: "Language choice"
+    en: "English"
+    fr: "French"
   menu:
     administration: "Administrator interface"
     categories: "Filter the spots by category"
     spot: "Purpose a new spot"
     spots: "All spots"
+  messages:
+    create: "The suggestion has been send."
+    delete: "Delete this image"
+    sure: "Are you sure?"
   place:
+    description: "Description"
+    duration: "Duration"
     duration_unit: "minutes"
+    price: "Price"
     price_unit: "CHF"
+    schedule: "Schedule"
     suggestion: "Suggestion of a new place"
+    title: "Title"
   time:
     formats:
       long: "%B %d, %Y %H:%M"
