@@ -1,6 +1,7 @@
 ActiveAdmin.register Category do
   # Customize index
   index do
+    selectable_column
     column :title
     column :description
     column :place_ids do |category|

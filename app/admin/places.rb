@@ -8,6 +8,7 @@ ActiveAdmin.register Place do
 
   # Customize index
   index do
+    selectable_column
     column :title
     column :image do |place|
       if place.image.attached?
@@ -25,6 +26,13 @@ ActiveAdmin.register Place do
     column t('place.duration') + ' [' + t('place.duration_unit') + ']', :duration_minutes
     column :schedule
     column :description
+    column t('place.created_by') do |place|
+      if place.user_id
+        User.find(place.user_id).pseudo
+      else
+        '-'
+      end
+    end
     column :created_at
     column :updated_at
     actions
@@ -52,7 +60,15 @@ ActiveAdmin.register Place do
       row t('place.duration') + ' [' + t('place.duration_unit') + ']' do |place|
         place.duration_minutes
       end
-      rows :schedule, :description, :lat, :lng, :created_at, :updated_at
+      rows :schedule, :description, :lat, :lng
+      row t('place.created_by') do |place|
+        if place.user_id
+          User.find(place.user_id).pseudo
+        else
+          '-'
+        end
+      end
+      rows :created_at, :updated_at
     end
   end
 

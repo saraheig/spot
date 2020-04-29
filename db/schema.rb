@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_214848) do
+ActiveRecord::Schema.define(version: 2020_05_01_140402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,8 +94,22 @@ ActiveRecord::Schema.define(version: 2020_04_14_214848) do
     t.jsonb "titles", default: {}, null: false
     t.jsonb "descriptions", default: {}
     t.jsonb "schedules", default: {}
+    t.bigint "user_id"
     t.index ["titles"], name: "index_places_on_titles"
+    t.index ["user_id"], name: "index_places_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "pseudo", limit: 20, null: false
+    t.string "email", limit: 50
+    t.string "password_digest"
+    t.bigint "language_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["language_id"], name: "index_users_on_language_id"
+    t.index ["pseudo"], name: "index_users_on_pseudo", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "users", "languages"
 end

@@ -1,5 +1,7 @@
-<footer class='footer-application'>
-  <div class='content has-text-centered'>
-    <%= link_to t('buttons.language'), new_language_path %>
-  </div>
-</footer>
+<% if !logged_in? %>
+  <footer class='footer-application'>
+    <div class='content has-text-centered'>
+      <%= link_to t('buttons.language'), new_language_path %>
+    </div>
+  </footer>
+<% end %>

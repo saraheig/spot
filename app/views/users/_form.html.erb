@@ -1,0 +1,51 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <div class="title is-5"><%= t('errors.template', :count => user.errors.count) %></div>
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br><div class="field">
+    <label class="label"><%= t('activerecord.attributes.user.pseudo') %></label>
+    <div class="control">
+      <%= form.text_field :pseudo %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.user.email') %></label>
+    <div class="control">
+      <%= form.email_field :email %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.user.language') %></label>
+    <div class="control">
+      <%= form.select :language_id, Language.all.collect { |language| [language.name, language.id] }, { :include_blank => t('messages.choose') } %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.user.password') %></label>
+    <div class="control">
+      <%= form.password_field :password %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.user.password_confirmation') %></label>
+    <div class="control">
+      <%= form.password_field :password_confirmation %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t('buttons.save') %>
+  </div>
+<% end %>

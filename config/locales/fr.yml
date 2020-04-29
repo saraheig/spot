@@ -23,11 +23,26 @@ fr:
         schedule: "Horaires"
         title: "Titre"
         updated_at: "Mis à jour le"
+      user:
+        created_at: "Créé le"
+        email: "Email "
+        language: "Langue "
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+        pseudo: "Pseudo "
+        updated_at: "Mis à jour le"
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "ne correspond pas au \"Mot de passe\""
     models:
       admin_user: "Administrateurs"
       category: "Catégories"
       comment: "Commentaires"
       place: "Lieux d'intérêt"
+      user: "Utilisateurs"
   active_admin:
     dashboard_category: "Toutes les catégories"
     dashboard_place: "Derniers lieux d'intérêt ajoutés / modifiés"
@@ -35,8 +50,13 @@ fr:
     back: "Retour"
     cancel: "Annuler"
     create: "Envoyer cette suggestion"
+    delete_user: "Supprimer le compte"
     language: "Modifier la langue"
+    login: "Se connecter"
+    modify_user: "Modifier les informations"
     new: "Suggérer un nouveau lieu d'intérêt"
+    register: "S'inscrire"
+    save: "Enregistrer"
     show: "Voir ce lieu d'intérêt"
     validate: "Valider"
   category:
@@ -80,18 +100,34 @@ fr:
     en: "Anglais"
     fr: "Français"
   menu:
+    account: "Compte utilisateur"
     administration: "Interface administrateur"
     categories: "Filtrer les lieux par catégorie"
+    login: "Se connecter"
+    logout: "Se déconnecter"
+    places: "Vos suggestions de lieu"
+    profile: "Votre profil utilisateur"
     spot: "Proposer un nouveau lieu"
     spots: "Tous les lieux d'intérêt"
   messages:
+    choose: "Choisir"
+    connexion: "Vous devez être connecté."
     create: "La suggestion a été envoyée."
     delete: "Supprimer cette image"
+    delete_confirmation: "Etes-vous sûr de vouloir définitivement supprimer votre compte ?"
+    delete_user: "Le compte a été supprimé."
+    edit: "Les modifications ont été sauvegardées."
+    login_confirmation: "Vous êtes connecté."
+    login_error: "Pseudo ou mot de passe invalide"
+    logout: "Vous êtes déconnecté."
+    redirection: "Redirection vers votre compte"
+    register: "Le compte a été créé."
     sure: "Etes-vous sûr ?"
   place:
     description: "Description"
     duration: "Durée"
     duration_unit: "minutes"
+    created_by: "Créé par"
     price: "Prix"
     price_unit: "CHF"
     schedule: "Horaires"
@@ -100,3 +136,9 @@ fr:
   time:
     formats:
       long: "%d.%m.%Y - %Hh%M"
+  user:
+    edit: "Modification du profil"
+    language: "Langue"
+    login: "Connexion"
+    new: "Inscription"
+    profile: "Votre profil utilisateur"

@@ -1,34 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   activerecord:
     attributes:
@@ -54,11 +23,26 @@ en:
         schedule: "Schedule"
         title: "Title"
         updated_at: "Updated at"
+      user:
+        created_at: "Created at"
+        email: "Email"
+        language: "Language"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        pseudo: "Pseudo"
+        updated_at: "Updated at"
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "does not match \"Password\""
     models:
       admin_user: "Administrators"
       category: "Categories"
       comment: "Comments"
       place: "Places"
+      user: "Users"
   active_admin:
     dashboard_category: "All the categories"
     dashboard_place: "Last added / modified places"
@@ -66,8 +50,13 @@ en:
     back: "Back"
     cancel: "Cancel"
     create: "Send this suggestion"
+    delete_user: "Delete the user account"
     language: "Modify the language"
+    login: "Login"
+    modify_user: "Modify the information"
     new: "Suggest a new place"
+    register: "Register"
+    save: "Save"
     show: "Show this place"
     validate: "Validate"
   category:
@@ -111,15 +100,31 @@ en:
     en: "English"
     fr: "French"
   menu:
+    account: "User account"
     administration: "Administrator interface"
     categories: "Filter the spots by category"
+    login: "Login"
+    logout: "Logout"
+    places: "Your spot suggestions"
+    profile: "Your user profile"
     spot: "Purpose a new spot"
     spots: "All spots"
   messages:
+    choose: "Choose"
+    connexion: "You have to be connnected."
     create: "The suggestion has been send."
     delete: "Delete this image"
+    delete_confirmation: "Are you sure you want to definitely delete your user account?"
+    delete_user: "The user account has been deleted."
+    edit: "Modifications have been saved."
+    login_confirmation: "You are logged in."
+    login_error: "Invalid pseudo or password"
+    logout: "You are logged out."
+    redirection: "Redirection to your account"
+    register: "The user account has been created."
     sure: "Are you sure?"
   place:
+    created_by: "Created by"
     description: "Description"
     duration: "Duration"
     duration_unit: "minutes"
@@ -131,3 +136,9 @@ en:
   time:
     formats:
       long: "%B %d, %Y %H:%M"
+  user:
+    edit: "Profile modification"
+    language: "Language"
+    login: "Login"
+    new: "Registration"
+    profile: "Your user profile"

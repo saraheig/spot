@@ -2,12 +2,13 @@
 
 <div class="title is-4 has-text-centered"><%= t('general.title') %></div>
 <% if params[:category] %>
-  <div class="subtitle is-6 has-text-centered"><%= t('activerecord.attributes.place.category') %> : <%= @category.titles[cookies[:language]] %>
+  <div class="subtitle is-6 has-text-centered">
+    <%= t('activerecord.attributes.place.category') %> : <%= @category.titles[cookies[:language]] %>
   </div>
 <% end %>
-<% if false %>
-  <div class="button is-info">
-    <%= link_to t('buttons.new'), new_place_path %>
+<% if params[:user] %>
+  <div class="subtitle is-6 has-text-centered">
+    <%= t('menu.places') %>
   </div>
 <% end %>
 

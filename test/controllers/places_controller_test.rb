@@ -3,25 +3,29 @@ require 'test_helper'
 class PlacesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @place = places(:placeOne)
+    @user = users(:userOne)
   end
 
-  test 'should get index' do
+  test 'should get index places' do
     get places_url
     assert_response :success
   end
 
-  test 'should get new' do
+  test 'should get new place after registering' do
+    create_user
     get new_place_url
     assert_response :success
   end
 
-  test 'should create place' do
+  test 'should create place after registering' do
+    create_user
     assert_difference('Place.count') do
       img = fixture_file_upload('files/rails.jpg', 'application/jpg')
       post places_url, params: { place: {
-        title: 'NewPlace', image: img, description: @place.description,
+        title: 'NewPlace', image: img, description: @place.descriptions['en'],
         price_chf: @place.price_chf, duration_minutes: @place.duration_minutes,
-        schedule: @place.schedule, lat: @place.lat, lng: @place.lng
+        schedule: @place.schedules['en'], lat: @place.lat, lng: @place.lng,
+        user_id: @lastUser.id
       } }
     end
 
@@ -31,5 +35,12 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
   test 'should show place' do
     get place_url(@place)
     assert_response :success
+  end
+
+  private
+
+  def create_user
+    post users_url, params: { user: { email: @user.email, language: @user.language, password: 'secret', password_confirmation: 'secret', pseudo: 'newPseudo' } }
+    @lastUser = User.last
   end
 end

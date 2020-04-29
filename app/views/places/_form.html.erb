@@ -85,7 +85,9 @@
     <div class="control">
       <%= form.text_field :lng %>
     </div>
-  </div><br>
+  </div>
+
+  <%= form.hidden_field :user_id, value: current_user.id %><br>
 
   <div class="actions">
     <%= form.submit t('buttons.create') %>

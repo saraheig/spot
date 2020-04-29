@@ -1,0 +1,26 @@
+<div class="title is-4"><%= t('user.login') %></div>
+
+<%= form_with url: session_path, local: true do |form| %>
+  <p id="notice"><%= notice %></p>
+
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.user.pseudo') %></label>
+    <div class="control">
+      <%= form.text_field :pseudo %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.user.password') %></label>
+    <div class="control">
+      <%= form.password_field :password %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= form.submit t('buttons.login') %>
+  </div>
+<% end %>
+
+<%= link_to t('buttons.register'), new_user_path %> |
+<%= link_to t('buttons.cancel'), places_path %>

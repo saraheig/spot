@@ -20,8 +20,20 @@
           <% end %>
         </div>
       </div>
+      <% if logged_in? %>
+        <div class="navbar-item has-dropdown dropdown is-hoverable" onclick="document.querySelector('.dropdown').classList.toggle('is-active');">
+          <a class="navbar-link is-arrowless"><%= t('menu.account') %></a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="<%= places_by_user_path(current_user.pseudo) %>"><%= t('menu.places') %></a>
+            <a class="navbar-item" href="<%= new_place_path %>"><%= t('menu.spot') %></a>
+            <a class="navbar-item" href="<%= user_path(current_user) %>"><%= t('menu.profile') %></a>
+            <a class="navbar-item" data-method="delete" href="<%= session_path %>"><%= t('menu.logout') %> (<%= current_user.pseudo %>)</a>
+          </div>
+        </div>
+      <% else %>
+        <a class="navbar-item" href="<%= new_session_path %>"><%= t('menu.login') %></a>
+      <% end %>
       <a class="navbar-item" href="/admin"><%= t('menu.administration') %></a>
-      <a class="navbar-item" href="<%= new_place_path %>"><%= t('menu.spot') %></a>
     </div>
   </div>
 </nav>

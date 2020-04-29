@@ -1,0 +1,24 @@
+<div class="title is-4"><%= t('user.profile') %></div>
+<p id="notice"><%= notice %></p><br>
+
+<p>
+  <strong><%= t('activerecord.attributes.user.pseudo') %>:</strong>
+  <%= @user.pseudo %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.user.email') %>:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= t('activerecord.attributes.user.language') %>:</strong>
+  <% if @user.language_id %>
+    <%= Language.find(@user.language_id).name %>
+  <% else %>
+    -
+  <% end %>
+</p>
+
+<br><%= link_to t('buttons.modify_user'), edit_user_path(@user) %> |
+<%= link_to t('buttons.delete_user'), @user, method: :delete, data: { confirm: t('messages.delete_confirmation') } %>
