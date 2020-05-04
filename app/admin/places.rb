@@ -22,7 +22,7 @@ ActiveAdmin.register Place do
         Category.find(category).title
       end
     end
-    column t('place.price') + ' [' + t('place.price_unit') + ']',:price_chf
+    column t('place.price') + ' [' + t('place.price_unit') + ']', :price_chf
     column t('place.duration') + ' [' + t('place.duration_unit') + ']', :duration_minutes
     column :schedule, sortable: "schedules->''".insert(-2, I18n.locale.to_s)
     column :description, sortable: "descriptions->''".insert(-2, I18n.locale.to_s)
@@ -76,7 +76,7 @@ ActiveAdmin.register Place do
   form html: { multiplart: true } do |form|
     form.inputs do
       h3 t('general.general_information')
-      translated_input(form, :titles, input_html: { maxlength: '40'})
+      translated_input(form, :titles, input_html: { maxlength: '40' })
       if form.object.image.attached?
         form.input :image, as: :file, hint: image_tag(form.object.image, width: '60%')
         div link_to t('messages.delete'), delete_place_image_admin_place_path(form.object.image.id), method: :delete, data: { confirm: t('messages.sure') }, class: 'center'
