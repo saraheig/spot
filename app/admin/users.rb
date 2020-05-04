@@ -1,5 +1,4 @@
 ActiveAdmin.register User do
-
   # Customize index
   index do
     selectable_column
@@ -19,7 +18,7 @@ ActiveAdmin.register User do
 
   # Customize show
   show title: :pseudo do
-    attributes_table do
+    attributes_table title: t('active_admin.details') do
       rows :pseudo, :email
       row t('user.language') do |user|
         if user.language_id

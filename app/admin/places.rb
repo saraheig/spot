@@ -9,7 +9,7 @@ ActiveAdmin.register Place do
   # Customize index
   index do
     selectable_column
-    column :title
+    column :title, sortable: "titles->''".insert(-2, I18n.locale.to_s)
     column :image do |place|
       if place.image.attached?
         image_tag place.image, width: '100'
@@ -24,8 +24,8 @@ ActiveAdmin.register Place do
     end
     column t('place.price') + ' [' + t('place.price_unit') + ']',:price_chf
     column t('place.duration') + ' [' + t('place.duration_unit') + ']', :duration_minutes
-    column :schedule
-    column :description
+    column :schedule, sortable: "schedules->''".insert(-2, I18n.locale.to_s)
+    column :description, sortable: "descriptions->''".insert(-2, I18n.locale.to_s)
     column t('place.created_by') do |place|
       if place.user_id
         User.find(place.user_id).pseudo
@@ -40,7 +40,7 @@ ActiveAdmin.register Place do
 
   # Customize show
   show do
-    attributes_table do
+    attributes_table title: t('active_admin.details') do
       row :title
       row :image do |place|
         if place.image.attached?

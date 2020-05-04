@@ -2,8 +2,8 @@ ActiveAdmin.register Category do
   # Customize index
   index do
     selectable_column
-    column :title
-    column :description
+    column :title, sortable: "titles->''".insert(-2, I18n.locale.to_s)
+    column :description, sortable: "descriptions->''".insert(-2, I18n.locale.to_s)
     column :place_ids do |category|
       category.place_ids.map do |place|
         Place.find(place).title
@@ -16,7 +16,7 @@ ActiveAdmin.register Category do
 
   # Customize show
   show do
-    attributes_table do
+    attributes_table title: t('active_admin.details') do
       row :title
       row :description
       row :place_ids do |category|
@@ -38,7 +38,6 @@ ActiveAdmin.register Category do
     end
     form.actions
   end
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

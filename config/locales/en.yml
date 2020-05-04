@@ -1,6 +1,12 @@
 en:
   activerecord:
     attributes:
+      admin_user:
+        created_at: "Created at"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        updated_at: "Updated at"
       category:
         created_at: "Created at"
         description: "Description"
@@ -46,6 +52,7 @@ en:
   active_admin:
     dashboard_category: "All the categories"
     dashboard_place: "Last added / modified places"
+    details: "Details"
   buttons:
     back: "Back"
     cancel: "Cancel"
