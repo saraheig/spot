@@ -14,6 +14,24 @@ ActiveAdmin.register Category do
     actions
   end
 
+  # Custom controller actions
+  controller do
+    # Destroy action: Category is deleted only if there is not any related places.
+    def destroy
+      @category = Category.find(params[:id])
+      if @category.place_ids.map.count.positive?
+        respond_to do |format|
+          format.html { redirect_to admin_categories_path, notice: t('messages.category_not_deleted') }
+        end
+      else
+        @category.destroy
+        respond_to do |format|
+          format.html { redirect_to admin_categories_path, notice: t('messages.category_deleted') }
+        end
+      end
+    end
+  end
+
   # Customize show
   show do
     attributes_table title: t('active_admin.details') do

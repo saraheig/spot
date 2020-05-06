@@ -60,3 +60,6 @@ fr:
       not_saved:
         one: "1 erreur a empêché ce(tte) %{resource} d'être sauvegardé(e) :"
         other: "%{count} erreurs ont empêché ce(tte) %{resource} d'être sauvegardé(e) :"
+  messages:
+    category_deleted: "La catégorie a été supprimée."
+    category_not_deleted: "La catégorie n'a pas été supprimée, car il y a des lieux associés à elle."

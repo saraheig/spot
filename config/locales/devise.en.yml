@@ -63,3 +63,6 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+  messages:
+    category_deleted: "The category has been deleted."
+    category_not_deleted: "The category has not been deleted, as there are some related places."
