@@ -10,7 +10,7 @@
     </div>
   <% end %>
 
-  <br><div class="title is-5"><%= t('general.general_information') %></div>
+  <br><div class="title is-5"><%= t('general.required_information') %></div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.title') %></label>
@@ -18,6 +18,12 @@
       <%= form.text_field :title %>
     </div>
   </div>
+
+  <label class="label"><%= t('messages.location') %></label>
+  <div id="location"><%= t('messages.location_nil') %></div>
+  <div id="map"></div>
+
+  <br><div class="title is-5"><%= t('general.additional_information') %></div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.image') %></label>
@@ -42,8 +48,6 @@
       <% end %>
     </div>
   </div>
-
-  <br><div class="title is-5"><%= t('general.additional_information') %></div>
 
   <div class="field">
     <label class="label"><%= t('activerecord.attributes.place.price') %> [<%= t('place.price_unit') %>]</label>
@@ -73,23 +77,35 @@
     </div>
   </div>
 
-  <div class="field">
-    <label class="label"><%= t('activerecord.attributes.place.lat') %></label>
-    <div class="control">
-      <%= form.text_field :lat %>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label"><%= t('activerecord.attributes.place.lng') %></label>
-    <div class="control">
-      <%= form.text_field :lng %>
-    </div>
-  </div>
-
   <%= form.hidden_field :user_id, value: current_user.id %><br>
 
   <div class="actions">
     <%= form.submit t('buttons.create') %>
   </div>
 <% end %>
+
+<script>
+  // Display map
+  var map = L.map('map').setView([46.779, 6.637], 15);
+  // Center map on the user position (if the user agrees to share its location)
+  map.locate({ setView : true, maxZoom : 17 });
+
+  // Add map base: OpenStreetMap
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+  }).addTo(map);
+
+  // Get map click
+  var marker = {};
+  map.on('click', onMapClick);
+
+  // Function to add new marker (and delete old marker)
+  function onMapClick(ev) {
+    if (marker != undefined) {
+      map.removeLayer(marker);
+    }
+    marker = L.marker(ev.latlng).addTo(map);
+    var div = document.getElementById('location');
+    div.innerHTML = "<input type='hidden' name='place[geometry]' id='place_geometry' value='POINT(" + ev.latlng.lng + " " + ev.latlng.lat + ")'>";
+  }
+</script>

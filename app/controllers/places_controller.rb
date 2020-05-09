@@ -6,15 +6,23 @@ class PlacesController < ApplicationController
     @category = Category.find_by("lower(categories.titles ->> 'en') = ''".insert(-2, params[:category].to_s))
     @places = Place.order_by_title.title_not_eq('').where(approved: true)
     @places = @places.by_category(@category) if @category
+    # Convert geometry field to Geojson format with RGeo
+    @places.each do |place|
+      place.geometry = RGeo::GeoJSON.encode(place.geometry)
+    end
+    render(params[:view] || 'index')
   end
 
+  # GET /places/account/juju
   def account
     @places = Place.where(user_id: current_user.id)
     render :index
   end
 
   # GET /places/1
-  def show; end
+  def show
+    @place.geometry = RGeo::GeoJSON.encode(@place.geometry)
+  end
 
   # GET /places/new
   def new
@@ -47,6 +55,6 @@ class PlacesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def place_params
-    params.require(:place).permit(:title, :description, :price_chf, :duration_minutes, :schedule, :lat, :lng, :image, :user_id, category_ids: [])
+    params.require(:place).permit(:title, :description, :price_chf, :duration_minutes, :schedule, :geometry, :image, :user_id, category_ids: [])
   end
 end

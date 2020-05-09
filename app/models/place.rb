@@ -13,12 +13,7 @@ class Place < ApplicationRecord
   validates_uniqueness_of :titles, case_sensitive: false
   validates_numericality_of :price_chf, greater_than_or_equal_to: 0, allow_nil: true
   validates_numericality_of :duration_minutes, only_integer: true, greater_than: 0, less_than_or_equal_to: 500, allow_nil: true
-  validates_presence_of :lat
-  # Range of the latitudes values in Switzerland (:allow_nil => true to avoid double validation errors)
-  validates_numericality_of :lat, greater_than_or_equal_to: 45.7, less_than_or_equal_to: 47.9, allow_nil: true
-  validates_presence_of :lng
-  # Range of the longitude values in Switzerland (:allow_nil => true to avoid double validation errors)
-  validates_numericality_of :lng, greater_than_or_equal_to: 5.7, less_than_or_equal_to: 10.6, allow_nil: true
+  validates_presence_of :geometry
 
   scope :by_category, lambda { |category|
     joins(:categories).where(categories: { id: category })

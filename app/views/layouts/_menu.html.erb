@@ -12,6 +12,7 @@
   <div class="navbar-menu" id="navbarSpot">
     <div class="navbar-start">
       <a class="navbar-item" href="/"><%= t('menu.spots') %></a>
+      <a class="navbar-item" href="<%= places_map_path %>"><%= t('menu.map') %></a>
       <div class="navbar-item has-dropdown dropdown is-hoverable" onclick="document.querySelector('.dropdown').classList.toggle('is-active');">
         <a class="navbar-link is-arrowless"><%= t('menu.categories') %></a>
         <div class="navbar-dropdown">

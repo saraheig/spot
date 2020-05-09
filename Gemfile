@@ -62,6 +62,15 @@ gem 'coffee-rails', '~> 5.0'
 # Rails form builder
 gem 'formtastic', '~> 3.1', '>= 3.1.5'
 
+# Leaflet.js map display library
+gem 'leaflet-rails', '~> 1.6'
+# Geospatial data library
+gem 'rgeo', '~> 2.1', '>= 2.1.1'
+# ActiveRecord connection adapter for PostGIS
+gem 'activerecord-postgis-adapter', '~> 6.0'
+# Convert RGeo data to and from GeoJSON
+gem 'rgeo-geojson', '~> 2.1', '>= 2.1.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

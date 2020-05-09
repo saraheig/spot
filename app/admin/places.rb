@@ -69,7 +69,10 @@ ActiveAdmin.register Place do
       row t('place.duration') + ' [' + t('place.duration_unit') + ']' do |place|
         place.duration_minutes
       end
-      rows :schedule, :description, :lat, :lng
+      rows :schedule, :description
+      row t('place.geometry') do |place|
+        link_to "#{place.geometry.y}, #{place.geometry.x}", "http://www.google.com/maps/place/#{place.geometry.y},#{place.geometry.x}", target: '_blank'
+      end
       row t('place.created_by') do |place|
         place.user_id ? User.find(place.user_id).pseudo : '-'
       end
@@ -93,6 +96,8 @@ ActiveAdmin.register Place do
         form.input :image, as: :file
       end
       form.input :category_ids, as: :check_boxes, collection: Category.all
+      form.input :geometry, as: :string
+      div link_to 'Google Maps', 'http://www.google.com/maps', class: 'center', target: '_blank'
       h3 t('general.additional_information')
       form.input :price_chf, step: 0.05, min: 0, hint: t('place.price_unit')
       form.input :duration_minutes, min: 0, hint: t('place.duration_unit')
@@ -100,15 +105,13 @@ ActiveAdmin.register Place do
       translated_input(form, :descriptions, required: false)
       form.input :approved, hint: t('place.approved_message')
       form.input :admin_user_id, input_html: { value: current_admin_user.id }, as: :hidden
-      form.input :lat
-      form.input :lng
     end
     form.actions
   end
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :price_chf, :duration_minutes, :lat, :lng, :image, :approved, :admin_user_id, category_ids: [],
+  permit_params :price_chf, :duration_minutes, :geometry, :image, :approved, :admin_user_id, category_ids: [],
                 titles: I18n.available_locales, descriptions: I18n.available_locales, schedules: I18n.available_locales
   #
   # or
