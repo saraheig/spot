@@ -22,6 +22,15 @@
             <p class="title is-5"><%= place.title %></p>
             <p class="subtitle is-6"><%= place.description %></p>
             <p class="subtitle is-6"><%= place.schedule %></p>
+            <% if params[:user] %>
+              <p class="subtitle is-6"><em>
+                <% if place.approved %>
+                  <%= t('place.approved_message_yes') %>
+                <% else %>
+                  <%= t('place.approved_message_no') %>
+                <% end %>
+              </em></p>
+            <% end %>
           </div>
           <div class="media-right">
             <figure class="image is-128x128">

@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
   # GET /places
   def index
     @category = Category.find_by("lower(categories.titles ->> 'en') = ''".insert(-2, params[:category].to_s))
-    @places = Place.order_by_title.title_not_eq('')
+    @places = Place.order_by_title.title_not_eq('').where(approved: true)
     @places = @places.by_category(@category) if @category
   end
 

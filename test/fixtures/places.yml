@@ -9,7 +9,9 @@ placeOne:
   schedules: { 'en': 'MyTextPlaceOne', 'fr': 'MonTextLieuUn' }
   lat: 46.1
   lng: 10.1
-  user: 1
+  approved: true
+  admin_user_id: 1
+  user_id: 1
 
 placeTwo:
   id: 2
@@ -20,7 +22,9 @@ placeTwo:
   schedules: { 'en': 'MyTextPlaceTwo', 'fr': 'MonTextLieuDeux' }
   lat: 46.2
   lng: 10.2
-  user: 2
+  approved: true
+  admin_user_id: 2
+  user_id: 2
 
 placeThree:
   id: 3
@@ -31,4 +35,5 @@ placeThree:
   schedules: { 'en': 'MyTextPlaceThree', 'fr': 'MonTextLieuTrois' }
   lat: 46.3
   lng: 10.3
-  user: 2
+  approved: false
+  user_id: 2

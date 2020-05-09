@@ -6,10 +6,17 @@ ActiveAdmin.register Place do
     redirect_back(fallback_location: edit_admin_category_path)
   end
 
+  # Add custom quickly filters in the index page
+  scope :all, default: true
+  scope(:not_approved) { |scope| scope.where(approved: false) }
+
   # Customize index
   index do
     selectable_column
     column :title, sortable: "titles->''".insert(-2, I18n.locale.to_s)
+    column t('place.approved') do |place|
+      place.approved ? t('place.approved_yes') : t('place.approved_no')
+    end
     column :image do |place|
       if place.image.attached?
         image_tag place.image, width: '100'
@@ -27,13 +34,12 @@ ActiveAdmin.register Place do
     column :schedule, sortable: "schedules->''".insert(-2, I18n.locale.to_s)
     column :description, sortable: "descriptions->''".insert(-2, I18n.locale.to_s)
     column t('place.created_by') do |place|
-      if place.user_id
-        User.find(place.user_id).pseudo
-      else
-        '-'
-      end
+      place.user_id ? User.find(place.user_id).pseudo : '-'
     end
     column :created_at
+    column t('place.updated_by') do |place|
+      place.admin_user_id ? AdminUser.find(place.admin_user_id).email : '-'
+    end
     column :updated_at
     actions
   end
@@ -42,6 +48,9 @@ ActiveAdmin.register Place do
   show do
     attributes_table title: t('active_admin.details') do
       row :title
+      row t('place.approved') do |place|
+        place.approved ? t('place.approved_yes') : t('place.approved_no')
+      end
       row :image do |place|
         if place.image.attached?
           image_tag place.image, width: '60%'
@@ -62,13 +71,13 @@ ActiveAdmin.register Place do
       end
       rows :schedule, :description, :lat, :lng
       row t('place.created_by') do |place|
-        if place.user_id
-          User.find(place.user_id).pseudo
-        else
-          '-'
-        end
+        place.user_id ? User.find(place.user_id).pseudo : '-'
       end
-      rows :created_at, :updated_at
+      row :created_at
+      row t('place.updated_by') do |place|
+        place.admin_user_id ? AdminUser.find(place.admin_user_id).email : '-'
+      end
+      row :updated_at
     end
   end
 
@@ -85,10 +94,12 @@ ActiveAdmin.register Place do
       end
       form.input :category_ids, as: :check_boxes, collection: Category.all
       h3 t('general.additional_information')
-      form.input :price_chf, step: 0.05, min: 0, hint: 'en CHF'
-      form.input :duration_minutes, min: 0, hint: 'en minutes'
+      form.input :price_chf, step: 0.05, min: 0, hint: t('place.price_unit')
+      form.input :duration_minutes, min: 0, hint: t('place.duration_unit')
       translated_input(form, :schedules, required: false)
       translated_input(form, :descriptions, required: false)
+      form.input :approved, hint: t('place.approved_message')
+      form.input :admin_user_id, input_html: { value: current_admin_user.id }, as: :hidden
       form.input :lat
       form.input :lng
     end
@@ -97,7 +108,8 @@ ActiveAdmin.register Place do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :price_chf, :duration_minutes, :lat, :lng, :image, category_ids: [], titles: I18n.available_locales, descriptions: I18n.available_locales, schedules: I18n.available_locales
+  permit_params :price_chf, :duration_minutes, :lat, :lng, :image, :approved, :admin_user_id, category_ids: [],
+                titles: I18n.available_locales, descriptions: I18n.available_locales, schedules: I18n.available_locales
   #
   # or
   #

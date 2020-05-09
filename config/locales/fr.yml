@@ -16,6 +16,7 @@ fr:
         title: "Titre"
         updated_at: "Mis à jour le"
       place:
+        approved: "Approuvé ?"
         category: "Catégorie"
         category_ids: "Catégorie(s)"
         created_at: "Créé le"
@@ -53,6 +54,9 @@ fr:
     dashboard_category: "Toutes les catégories"
     dashboard_place: "Derniers lieux d'intérêt ajoutés / modifiés"
     details: "Détails"
+    scopes:
+      all: "Tous les lieux"
+      not_approved: "Lieux à approuver"
   buttons:
     back: "Retour"
     cancel: "Annuler"
@@ -98,6 +102,14 @@ fr:
     template:
       one: "Enregistrement annulé : 1 erreur"
       other: "Enregistrement annulé : %{count} erreurs"
+  flash:
+    actions:
+      create:
+        notice: "L'élément a bien été créé dans \"%{resource_name}\"."
+      update:
+        notice: "L'élément dans \"%{resource_name}\" a bien été mis à jour."
+      destroy:
+        notice: "L'élément a bien été supprimé de \"%{resource_name}\"."
   general:
     additional_information: "Informations supplémentaires"
     general_information: "Informations générales"
@@ -131,6 +143,13 @@ fr:
     register: "Le compte a été créé."
     sure: "Etes-vous sûr ?"
   place:
+    approved: "Approuvé ?"
+    approved_message: "Si la case est cochée, ce lieu sera considéré comme
+      approuvé et sera publié dans l'application."
+    approved_message_no: "Votre suggestion n'a pas encore été approuvée."
+    approved_message_yes: "Votre suggesion a été approuvée et est à présent publiée."
+    approved_no: "Non"
+    approved_yes: "Oui"
     description: "Description"
     duration: "Durée"
     duration_unit: "minutes"
@@ -140,6 +159,7 @@ fr:
     schedule: "Horaires"
     suggestion: "Suggestion d'un nouveau lieu d'intérêt"
     title: "Titre"
+    updated_by: "Mis à jour par"
   time:
     formats:
       long: "%d.%m.%Y - %Hh%M"

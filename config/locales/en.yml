@@ -16,6 +16,7 @@ en:
         title: "Title"
         updated_at: "Updated at"
       place:
+        approved: "Approved?"
         category: "Category"
         category_ids: "Category / categories"
         created_at: "Created at"
@@ -53,6 +54,9 @@ en:
     dashboard_category: "All the categories"
     dashboard_place: "Last added / modified places"
     details: "Details"
+    scopes:
+      all: "All places"
+      not_approved: "Places to be approved"
   buttons:
     back: "Back"
     cancel: "Cancel"
@@ -98,6 +102,14 @@ en:
     template:
       one: "Cancelled registration: 1 error"
       other: "Cancelled registration: %{count} errors"
+  flash:
+    actions:
+      create:
+        notice: "The item was successfully created in \"%{resource_name}\"."
+      update:
+        notice: "The item in \"%{resource_name}\" was successfully updated."
+      destroy:
+        notice: "The item was successfully deleted from \"%{resource_name}\"."
   general:
     additional_information: "More information"
     general_information: "General information"
@@ -131,6 +143,13 @@ en:
     register: "The user account has been created."
     sure: "Are you sure?"
   place:
+    approved: "Approved?"
+    approved_message: "If the box is checked, this place will be considered as
+      approved and will be published in the application."
+    approved_message_no: "Your suggestion has not been approved yet."
+    approved_message_yes: "Your suggestion has been approved and is now published."
+    approved_no: "No"
+    approved_yes: "Yes"
     created_by: "Created by"
     description: "Description"
     duration: "Duration"
@@ -140,6 +159,7 @@ en:
     schedule: "Schedule"
     suggestion: "Suggestion of a new place"
     title: "Title"
+    updated_by: "Updated by"
   time:
     formats:
       long: "%B %d, %Y %H:%M"

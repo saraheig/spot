@@ -12,6 +12,8 @@ class PlacesTest < ApplicationSystemTestCase
   test 'visiting the index' do
     visit places_url
     assert_selector 'div.title.is-4', text: I18n.t('general.title')
+    # Check the number of all cards (only places that are approved)
+    assert_selector 'div.card', count: 2
   end
 
   test 'creating a place' do

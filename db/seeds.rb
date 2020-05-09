@@ -96,7 +96,8 @@ double_r = Place.create!(
   },
   lat: 46.779951,
   lng: 6.637833,
-  user: jane
+  user: jane,
+  approved: true
 )
 maison_ailleurs = Place.create!(
   titles: {
@@ -115,7 +116,8 @@ maison_ailleurs = Place.create!(
   },
   lat: 46.778594,
   lng: 6.641896,
-  user: john
+  user: john,
+  approved: true
 )
 numerik_games = Place.create!(
   titles: {
