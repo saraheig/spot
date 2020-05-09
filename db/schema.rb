@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_162750) do
+ActiveRecord::Schema.define(version: 2020_05_10_172842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -87,8 +88,6 @@ ActiveRecord::Schema.define(version: 2020_05_06_162750) do
   create_table "places", force: :cascade do |t|
     t.decimal "price_chf", precision: 10, scale: 2
     t.integer "duration_minutes", limit: 2
-    t.decimal "lat", precision: 10, scale: 6
-    t.decimal "lng", precision: 10, scale: 6
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "titles", default: {}, null: false
@@ -97,6 +96,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_162750) do
     t.bigint "user_id"
     t.bigint "admin_user_id"
     t.boolean "approved", default: false
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.index ["admin_user_id"], name: "index_places_on_admin_user_id"
     t.index ["titles"], name: "index_places_on_titles"
     t.index ["user_id"], name: "index_places_on_user_id"

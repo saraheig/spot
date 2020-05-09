@@ -15,8 +15,6 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker');
-
 import * as ActiveStorage from '@rails/activestorage';
 ActiveStorage.start();
 
@@ -25,5 +23,11 @@ Turbolinks.start();
 
 import Rails from '@rails/ujs';
 Rails.start();
+
+// Add leaflet and leaflet-defaulticon-compatibility (https://github.com/ghybs/leaflet-defaulticon-compatibility)
+import 'leaflet/dist/leaflet.css';
+import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css';
+import * as L from 'leaflet';
+import 'leaflet-defaulticon-compatibility';
 
 import '../scss/application';

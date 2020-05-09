@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # Custom Place routes
   resources :places, only: %i[new]
+  get 'places/map', to: 'places#index', view: 'map'
   get 'places/account/:user', to: 'places#account', as: :places_by_user
   get 'places/:category', to: 'places#index', as: :places_by_category, constraints: { category: /[a-z]+/ }
   resources :places, only: %i[create index show]

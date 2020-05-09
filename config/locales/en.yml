@@ -22,6 +22,7 @@ en:
         created_at: "Created at"
         description: "Description"
         duration_minutes: "Duration"
+        geometry: "Location"
         image: "Image"
         lat: "Latitude"
         lng: "Longitude"
@@ -40,6 +41,10 @@ en:
         updated_at: "Updated at"
     errors:
       models:
+        place:
+          attributes:
+            geometry:
+              blank: "must be correctly indicated"
         user:
           attributes:
             password_confirmation:
@@ -112,7 +117,7 @@ en:
         notice: "The item was successfully deleted from \"%{resource_name}\"."
   general:
     additional_information: "More information"
-    general_information: "General information"
+    required_information: "Required information"
     title: "Spots of Yverdon"
   language:
     choice: "Language choice"
@@ -124,6 +129,7 @@ en:
     categories: "Filter the spots by category"
     login: "Login"
     logout: "Logout"
+    map: "Map"
     places: "Your spot suggestions"
     profile: "Your user profile"
     spot: "Purpose a new spot"
@@ -136,6 +142,8 @@ en:
     delete_confirmation: "Are you sure you want to definitely delete your user account?"
     delete_user: "The user account has been deleted."
     edit: "Modifications have been saved."
+    location: "Location"
+    location_nil: "Clic on the map to indicate the location"
     login_confirmation: "You are logged in."
     login_error: "Invalid pseudo or password"
     logout: "You are logged out."
@@ -154,6 +162,7 @@ en:
     description: "Description"
     duration: "Duration"
     duration_unit: "minutes"
+    geometry: "Location"
     price: "Price"
     price_unit: "CHF"
     schedule: "Schedule"

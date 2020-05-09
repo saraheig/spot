@@ -5,15 +5,17 @@ language: ruby
 
 addons:
   chrome: stable
-
-services:
-  - postgresql
+  postgresql: 9.6
+  apt:
+    packages:
+      - postgresql-9.6-postgis-2.4
 
 before_script:
   - bundle install
   - nvm install 8
   - NODE_ENV=test bundle exec rake assets:precompile
   - bundle exec rake db:create
+  - psql -U postgres -c "create extension postgis"
   - bundle exec rake db:migrate
 
 script:

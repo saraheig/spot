@@ -7,8 +7,7 @@ placeOne:
   price_chf:
   duration_minutes: 1
   schedules: { 'en': 'MyTextPlaceOne', 'fr': 'MonTextLieuUn' }
-  lat: 46.1
-  lng: 10.1
+  geometry: POINT (6.537831 46.679951)
   approved: true
   admin_user_id: 1
   user_id: 1
@@ -20,8 +19,7 @@ placeTwo:
   price_chf:
   duration_minutes: 1
   schedules: { 'en': 'MyTextPlaceTwo', 'fr': 'MonTextLieuDeux' }
-  lat: 46.2
-  lng: 10.2
+  geometry: POINT (6.537832 46.679952)
   approved: true
   admin_user_id: 2
   user_id: 2
@@ -33,7 +31,6 @@ placeThree:
   price_chf:
   duration_minutes: 1
   schedules: { 'en': 'MyTextPlaceThree', 'fr': 'MonTextLieuTrois' }
-  lat: 46.3
-  lng: 10.3
+  geometry: POINT (6.537833 46.679953)
   approved: false
   user_id: 2

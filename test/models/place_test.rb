@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class PlaceTest < ActiveSupport::TestCase
-  test 'validates title, latitude and longitude presence' do
-    place = Place.new(title: nil, lat: nil, lng: nil)
+  test 'validates title and geometry presence' do
+    place = Place.new(title: nil, geometry: nil)
     assert_not place.valid?
-    assert_equal %i[title lat lng], place.errors.keys
+    assert_equal %i[title geometry], place.errors.keys
   end
 end

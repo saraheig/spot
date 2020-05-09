@@ -6,8 +6,13 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
     @user = users(:userOne)
   end
 
-  test 'should get index places' do
+  test 'should get index places with the cards' do
     get places_url
+    assert_response :success
+  end
+
+  test 'should get index places with the map' do
+    get places_map_url
     assert_response :success
   end
 
@@ -24,7 +29,7 @@ class PlacesControllerTest < ActionDispatch::IntegrationTest
       post places_url, params: { place: {
         title: 'NewPlace', image: img, description: @place.descriptions['en'],
         price_chf: @place.price_chf, duration_minutes: @place.duration_minutes,
-        schedule: @place.schedules['en'], lat: @place.lat, lng: @place.lng,
+        schedule: @place.schedules['en'], geometry: @place.geometry,
         user_id: @last_user.id
       } }
     end

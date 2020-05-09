@@ -94,8 +94,7 @@ double_r = Place.create!(
     'en' => 'Opening hours: 09:00-23:00',
     'fr' => 'Heures d\'ouverture : 09:00-23:00'
   },
-  lat: 46.779951,
-  lng: 6.637833,
+  geometry: RGeo::Geographic.spherical_factory(srid: 4326).point(6.637833, 46.779951),
   user: jane,
   approved: true
 )
@@ -114,8 +113,7 @@ maison_ailleurs = Place.create!(
     'en' => 'Mon.-Sun.: 11:00-18:00',
     'fr' => 'Ma-di : 11:00-18:00'
   },
-  lat: 46.778594,
-  lng: 6.641896,
+  geometry: RGeo::Geographic.spherical_factory(srid: 4326).point(6.641896, 46.778594),
   user: john,
   approved: true
 )
@@ -134,8 +132,7 @@ numerik_games = Place.create!(
     'en' => '28-30 August 2020',
     'fr' => '28-30 août 2020'
   },
-  lat: 46.766403,
-  lng: 6.645001,
+  geometry: RGeo::Geographic.spherical_factory(srid: 4326).point(6.645001, 46.766403),
   user: juju
 )
 

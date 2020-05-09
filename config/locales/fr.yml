@@ -22,6 +22,7 @@ fr:
         created_at: "Créé le"
         description: "Description"
         duration_minutes: "Durée"
+        geometry: "Emplacement"
         image: "Image"
         lat: "Latitude"
         lng: "Longitude"
@@ -40,6 +41,10 @@ fr:
         updated_at: "Mis à jour le"
     errors:
       models:
+        place:
+          attributes:
+            geometry:
+              blank: "doit être correctement indiqué"
         user:
           attributes:
             password_confirmation:
@@ -112,7 +117,7 @@ fr:
         notice: "L'élément a bien été supprimé de \"%{resource_name}\"."
   general:
     additional_information: "Informations supplémentaires"
-    general_information: "Informations générales"
+    required_information: "Informations requises"
     title: "Lieux d'intérêt à Yverdon"
   language:
     choice: "Choix de la langue"
@@ -124,6 +129,7 @@ fr:
     categories: "Filtrer les lieux par catégorie"
     login: "Se connecter"
     logout: "Se déconnecter"
+    map: "Carte"
     places: "Vos suggestions de lieu"
     profile: "Votre profil utilisateur"
     spot: "Proposer un nouveau lieu"
@@ -136,6 +142,8 @@ fr:
     delete_confirmation: "Etes-vous sûr de vouloir définitivement supprimer votre compte ?"
     delete_user: "Le compte a été supprimé."
     edit: "Les modifications ont été sauvegardées."
+    location: "Emplacement"
+    location_nil: "Cliquer dans la carte pour indiquer la position"
     login_confirmation: "Vous êtes connecté."
     login_error: "Pseudo ou mot de passe invalide"
     logout: "Vous êtes déconnecté."
@@ -154,6 +162,7 @@ fr:
     duration: "Durée"
     duration_unit: "minutes"
     created_by: "Créé par"
+    geometry: "Emplacement"
     price: "Prix"
     price_unit: "CHF"
     schedule: "Horaires"

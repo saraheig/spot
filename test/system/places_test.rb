@@ -2,18 +2,34 @@ require 'application_system_test_case'
 
 class PlacesTest < ApplicationSystemTestCase
   setup do
-    @place = places(:placeOne)
+    @place = places(:placeTwo)
     @category = categories(:categoryOne)
     @user = users(:userOne)
     # Set a thin width to the browser page
     page.driver.browser.manage.window.resize_to(400, 1000)
   end
 
-  test 'visiting the index' do
+  test 'visiting the index with the cards' do
     visit places_url
     assert_selector 'div.title.is-4', text: I18n.t('general.title')
     # Check the number of all cards (only places that are approved)
     assert_selector 'div.card', count: 2
+  end
+
+  test 'visiting one place' do
+    visit places_url
+    click_on @place.title
+    assert_selector 'p.title.is-4', text: @place.title
+    assert_selector 'div#map'
+    assert_selector 'img.leaflet-marker-icon', count: 1
+  end
+
+  test 'visiting the index with the map' do
+    visit places_map_url
+    assert_selector 'div.title.is-4', text: I18n.t('general.title')
+    # Check the presence of the map and all markers (only places that are approved) (headless -> visible: false)
+    assert_selector 'div#map'
+    assert_selector 'img.leaflet-marker-icon', visible: false, count: 2
   end
 
   test 'creating a place' do
@@ -35,13 +51,18 @@ class PlacesTest < ApplicationSystemTestCase
     click_on I18n.t('menu.spot')
 
     fill_in 'place[title]', with: 'VeryNewPlace'
+    # Check the presence of a map with no marker
+    assert_selector 'div#map'
+    assert_selector 'img.leaflet-marker-icon', count: 0
+    # Click on the map to add the location and check its presence
+    find('div#map').click(6, 4)
+    assert_selector 'img.leaflet-marker-icon', count: 1
+    # Fill in other fields (checkboxes + text fields)
     find(:css, "#place_category_ids_[value='#{@category.id}']").set(true)
     fill_in 'place[price_chf]', with: @place.price_chf
     fill_in 'place[duration_minutes]', with: @place.duration_minutes
     fill_in 'place[schedule]', with: @place.schedule
     fill_in 'place[description]', with: @place.description
-    fill_in 'place[lat]', with: @place.lat
-    fill_in 'place[lng]', with: @place.lng
 
     click_on I18n.t('buttons.create')
     assert_text I18n.t('messages.create')
