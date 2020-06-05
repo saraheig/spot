@@ -3,35 +3,4 @@
 <div class="title is-4 has-text-centered"><%= t('general.title') %></div>
 <%= content_tag(:div, nil, :id => 'map', :data => { :places => @places }) %>
 
-<script>
-  var language = getCookie('language');
-
-  // Display map
-  var map = L.map('map').setView([46.779, 6.641], 15);
-  // Center map on the user position (if the user agrees to share its location)
-  map.locate({ setView : true, maxZoom : 17 });
-
-  // Add map base: OpenStreetMap
-  L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-  }).addTo(map);
-
-  // Get and add approved places in the map
-  var places = JSON.parse(document.querySelector('#map').dataset.places);
-  places.forEach(function(place) {
-    L.geoJSON(place.geometry).addTo(map).bindPopup('<a href="' + place.id + '">' + place.titles[language] + '</a>');
-  });
-
-  // Get the language from the related cookie
-  function getCookie(name) {
-    var cookieArray = document.cookie.split(";");
-    for(var i = 0; i < cookieArray.length; i++) {
-      var cookie = cookieArray[i].split("=");
-      if(name == cookie[0].trim()) {
-        return decodeURIComponent(cookie[1]);
-      }
-    }
-    // Default value: english
-    return 'en';
-  }
-</script>
+<%= javascript_pack_tag 'places/index' %>

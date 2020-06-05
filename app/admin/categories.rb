@@ -16,6 +16,9 @@ ActiveAdmin.register Category do
 
   # Custom controller actions
   controller do
+    include SetToParam
+    before_action :set_to_param_with_id
+
     # Destroy action: Category is deleted only if there is not any related places.
     def destroy
       @category = Category.find(params[:id])

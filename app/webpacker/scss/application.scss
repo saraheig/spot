@@ -2,10 +2,17 @@
 
 @import 'places';
 
-body {
+html, body {
+  height: 100%;
   padding: 10px;
 }
 
-.footer-application {
+footer {
+  height: 5%;
+  margin-bottom: 15px;
   padding: 15px;
+}
+
+nav {
+  height: 10%;
 }
