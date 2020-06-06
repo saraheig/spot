@@ -53,7 +53,7 @@ ActiveAdmin.register Place do
       end
       row :image do |place|
         if place.image.attached?
-          image_tag place.image, width: '60%'
+          image_tag place.image, width: '200'
         else
           '-'
         end
@@ -90,7 +90,7 @@ ActiveAdmin.register Place do
       h3 t('general.general_information')
       translated_input(form, :titles, input_html: { maxlength: '40' })
       if form.object.image.attached?
-        form.input :image, as: :file, hint: image_tag(form.object.image, width: '60%')
+        form.input :image, as: :file, hint: image_tag(form.object.image, width: '200')
         div link_to t('messages.delete'), delete_place_image_admin_place_path(form.object.image.id), method: :delete, data: { confirm: t('messages.sure') }, class: 'center'
       else
         form.input :image, as: :file

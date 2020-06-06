@@ -145,7 +145,7 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources and pages from here.
   #
-  config.before_action :set_to_param_with_id
+  # config.before_action :set_to_param_with_id
 
   # == Localize Date/Time Format
   #
@@ -290,15 +290,4 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
-
-  private
-
-  # Override to_param for Administration part
-  def set_to_param_with_id
-    Category.class_eval do
-      def to_param
-        id.to_s
-      end
-    end
-  end
 end
