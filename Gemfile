@@ -95,7 +95,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver with Chrome
   gem 'capybara', '~> 3.29'
   # WebDrive to write automated tests of websites
-  gem 'selenium-webdriver', '~> 3.142', '>= 3.142.6'
+  gem 'selenium-webdriver', '~> 3.10.0', '>= 3.10.0'
   gem 'webdrivers', '~> 4.0'
   # Make-like program implemented in Ruby (Travis CI)
   gem 'rake', '~> 13.0', '>= 13.0.1'
