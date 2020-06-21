@@ -50,14 +50,21 @@
   </div>
 
   <div class="field">
-    <label class="label"><%= t('activerecord.attributes.place.price') %> [<%= t('place.price_unit') %>]</label>
+    <label class="label"><%= t('activerecord.attributes.place.url') %></label>
+    <div class="control">
+      <%= form.text_field :url %>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label"><%= t('activerecord.attributes.place.price_chf') %> [<%= t('place.price_unit') %>]</label>
     <div class="control">
       <%= form.number_field :price_chf, step: 0.05, min: 0, hint: 'en CHF' %>
     </div>
   </div>
 
   <div class="field">
-    <label class="label"><%= t('activerecord.attributes.place.duration') %> [<%= t('place.duration_unit') %>]</label>
+    <label class="label"><%= t('activerecord.attributes.place.duration_minutes') %> [<%= t('place.duration_unit') %>]</label>
     <div class="control">
       <%= form.number_field :duration_minutes, min: 0, hint: 'en minutes' %>
     </div>

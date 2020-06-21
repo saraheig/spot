@@ -32,7 +32,7 @@ class PlacesTest < ApplicationSystemTestCase
     assert_selector 'img.leaflet-marker-icon', visible: false, count: 2
   end
 
-  test 'creating a place' do
+  test 'creating a place and show places of the current user' do
     visit places_url
     # Open the place form with the navbar-burger (thin screen) (responsive)
     find(:css, 'a.navbar-burger').click
@@ -63,9 +63,15 @@ class PlacesTest < ApplicationSystemTestCase
     fill_in 'place[duration_minutes]', with: @place.duration_minutes
     fill_in 'place[schedule]', with: @place.schedule
     fill_in 'place[description]', with: @place.description
+    fill_in 'place[url]', with: @place.url
 
     click_on I18n.t('buttons.create')
     assert_text I18n.t('messages.create')
+
+    find(:css, 'a.navbar-link', text: I18n.t('menu.account')).click
+    click_on I18n.t('menu.places')
+
+    assert_selector 'div.card', count: 2
   end
 
   test 'filtering the places' do

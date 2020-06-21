@@ -6,8 +6,12 @@ This project is composed by a [Ruby on Rails][rails] 6.0+ application with **a r
 
 The application is currently deployed on [Heroku][heroku-main]. To access the administration Web part, please use the following [link][heroku-admin]. The application is tested through unit and system tests with [Travis CI][travis] to run the tests and [Coveralls][coveralls] to check the coverage of the tests.
 
+[![Build Status](https://travis-ci.com/saraheig/spot.svg?branch=master)](https://travis-ci.com/saraheig/spot)
+[![Coverage Status](https://coveralls.io/repos/github/saraheig/spot/badge.svg?branch=master&service=github)](https://coveralls.io/github/saraheig/spot?branch=master)
+
 - [Main characteristics](#main-characteristics)
-- [Requirements](#requirements)
+- [Requirements and set up](#requirements-and-set-up)
+- [Instruction manual about how to use the application](#instruction-manual-about-how-to-use-the-application)
 
 
 ## Main characteristics
@@ -20,7 +24,7 @@ Here are the main characteristics of the application:
 * The application is entirely [multilingual][heroku-language] (interfaces and database). Currently two languages are proposed: English (default language) and French.
 
 
-## Requirements
+## Requirements and set up
 
 * [Ruby][ruby] 2.6.5
 * [PostgreSQL][postgresql] 12.2+
@@ -30,6 +34,8 @@ Here are the main characteristics of the application:
 * [Chrome][chrome] to run system tests
 
 Tip: Use [rbenv][rbenv] or [RVM][rvm] with [Ubuntu][ubuntu] for instance.
+
+### Set up
 
 Here are the main steps to quickly set up the machine in order to locally run this application:
 1. Install [Ruby][ruby] with [ruby-build][ruby-build] for instance, [PostgreSQL][postgresql], [PostGIS][postgis], [Yarn][yarn], [Git][git] and [Chrome][chrome]
@@ -44,10 +50,18 @@ Here are the main steps to quickly set up the machine in order to locally run th
 10. Populate the database with `rails db:seed`
 11. Launch the application with `rails server` and open a browser at [http://localhost:3000][localhost-main] or [http://localhost:3000/admin][localhost-admin] (Email: admin@example.com - Password: password) for instance
 
-Furthermore:
+### Some more information
+
 * To locally execute the tests, run `rails test` and `rails test:system`.
 * To write or modify code, the [Atom][atom] text editor can for instance be used.
 * To access to the local database, run `rails console`.
+* Here is the model of the database: [Conceptual model](/lib/assets/mcd.pdf).
+
+
+## Instruction manual about how to use the application
+
+- [Instruction manual in English](/lib/assets/instruction-manual-EN.pdf)
+- [Instruction manual in French](/lib/assets/manuel-utilisation-FR.pdf)
 
 
 **June 2020 / [MAS-RAD formation][mas-rad]**

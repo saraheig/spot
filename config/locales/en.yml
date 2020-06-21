@@ -31,6 +31,7 @@ en:
         schedule: "Schedule"
         title: "Title"
         updated_at: "Updated at"
+        url: "URL link"
       user:
         created_at: "Created at"
         email: "Email"
@@ -78,6 +79,7 @@ en:
   category:
     description: "Description"
     title: "Title"
+    title_format: "No space, no number and no special character"
   errors:
     format: "The field \"%{attribute}\" %{message}."
     messages:
@@ -163,12 +165,14 @@ en:
     duration: "Duration"
     duration_unit: "minutes"
     geometry: "Location"
+    more_information: "More information here..."
     price: "Price"
     price_unit: "CHF"
     schedule: "Schedule"
     suggestion: "Suggestion of a new place"
     title: "Title"
     updated_by: "Updated by"
+    url: "URL link"
   time:
     formats:
       long: "%B %d, %Y %H:%M"

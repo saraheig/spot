@@ -10,7 +10,7 @@ if(container != null) {
 var map = L.map('map');
 map.setView([46.779, 6.641], 15);
 // Center map on the user position (if the user agrees to share its location)
-map.locate({ setView : true, maxZoom : 17 });
+map.locate({ setView : true, maxZoom : 18 });
 
 // Add map base: OpenStreetMap
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {

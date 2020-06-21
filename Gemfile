@@ -62,8 +62,6 @@ gem 'coffee-rails', '~> 5.0'
 # Rails form builder
 gem 'formtastic', '~> 3.1', '>= 3.1.5'
 
-# Leaflet.js map display library
-gem 'leaflet-rails', '~> 1.6'
 # Geospatial data library
 gem 'rgeo', '~> 2.1', '>= 2.1.1'
 # ActiveRecord connection adapter for PostGIS
@@ -99,6 +97,8 @@ group :test do
   gem 'webdrivers', '~> 4.0'
   # Make-like program implemented in Ruby (Travis CI)
   gem 'rake', '~> 13.0', '>= 13.0.1'
+  # Add assigns and assert_template
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

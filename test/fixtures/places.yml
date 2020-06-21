@@ -4,9 +4,10 @@ placeOne:
   id: 1
   titles: { 'en': 'MyStringPlaceOne', 'fr': 'MonStringLieuUn' }
   descriptions: { 'en': 'MyTextPlaceOne', 'fr': 'MonTextLieuUn' }
-  price_chf:
-  duration_minutes: 1
+  price_chf: 10.0
+  duration_minutes: 10
   schedules: { 'en': 'MyTextPlaceOne', 'fr': 'MonTextLieuUn' }
+  url: 'http://www.urlOne.ch'
   geometry: POINT (6.537831 46.679951)
   approved: true
   admin_user_id: 1
@@ -16,9 +17,10 @@ placeTwo:
   id: 2
   titles: { 'en': 'MyStringPlaceTwo', 'fr': 'MonStringLieuDeux' }
   descriptions: { 'en': 'MyTextPlaceTwo', 'fr': 'MonTextLieuDeux' }
-  price_chf:
-  duration_minutes: 1
+  price_chf: 20.0
+  duration_minutes: 20
   schedules: { 'en': 'MyTextPlaceTwo', 'fr': 'MonTextLieuDeux' }
+  url: 'http://www.urlTwo.ch'
   geometry: POINT (6.537832 46.679952)
   approved: true
   admin_user_id: 2
@@ -28,9 +30,10 @@ placeThree:
   id: 3
   titles: { 'en': 'MyStringPlaceThr', 'fr': 'MonStringLieuTrois' }
   descriptions: { 'en': 'MyTextPlaceThree', 'fr': 'MonTextLieuTrois' }
-  price_chf:
-  duration_minutes: 1
+  price_chf: 30.0
+  duration_minutes: 30
   schedules: { 'en': 'MyTextPlaceThree', 'fr': 'MonTextLieuTrois' }
+  url: 'http://www.urlThree.ch'
   geometry: POINT (6.537833 46.679953)
   approved: false
   user_id: 2

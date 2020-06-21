@@ -5,10 +5,11 @@ userOne:
   pseudo: MyStringOne
   email: MyStringOne@gmail.com
   password_digest: <%= BCrypt::Password.create('secret') %>
+  language_id: 1
 
 userTwo:
   id: 2
   pseudo: MyStringTwo
   email: MyStringTwo@gmail.com
-  language: 'en'
   password_digest: <%= BCrypt::Password.create('secret') %>
+  language_id: 2

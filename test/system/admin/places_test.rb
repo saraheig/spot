@@ -14,6 +14,7 @@ class Admin::PlacesTest < ApplicationSystemTestCase
     click_on I18n.t('activerecord.models.place')
 
     assert_selector 'h2', text: I18n.t('activerecord.models.place')
+
     # Scope to quickly filter places -> display only unapproved places
     click_on I18n.t('active_admin.scopes.not_approved')
     # Check the number of cards related to unapproved places (1 place)

@@ -14,7 +14,7 @@ ActiveAdmin.register_page 'Dashboard' do
         panel I18n.t('active_admin.dashboard_category') do
           ul do
             Category.all.map do |category|
-              li link_to(category.title, admin_category_path(category))
+              li link_to(category.title, admin_category_path(category.id))
             end
           end
         end

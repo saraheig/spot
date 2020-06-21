@@ -13,6 +13,7 @@ class Place < ApplicationRecord
   validates_uniqueness_of :titles, case_sensitive: false
   validates_numericality_of :price_chf, greater_than_or_equal_to: 0, allow_nil: true
   validates_numericality_of :duration_minutes, only_integer: true, greater_than: 0, less_than_or_equal_to: 500, allow_nil: true
+  validates_length_of :url, maximum: 250
   validates_presence_of :geometry
 
   scope :by_category, lambda { |category|

@@ -3,6 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:userOne)
+    @otherUser = users(:userTwo)
   end
 
   test 'should not get index users' do
@@ -24,10 +25,23 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to user_url(User.last)
   end
 
+  test 'should not create user (password difference)' do
+    assert_difference('User.count', 0) do
+      post users_url, params: { user: { email: @user.email, language: @user.language, password: 'secret', password_confirmation: 'otherSecret', pseudo: 'newPseudo' } }
+    end
+    assert_template :new
+  end
+
   test 'should show user after registering' do
     create_user
     get user_url(@user)
     assert_response :success
+  end
+
+  test 'should not show another user even after registering' do
+    create_user
+    get user_url(@otherUser)
+    assert_redirected_to user_url(@user)
   end
 
   test 'should get edit user after registering' do
@@ -40,6 +54,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     create_user
     patch user_url(@user), params: { user: { email: @user.email, language: @user.language, password: 'secret', password_confirmation: 'secret', pseudo: @user.pseudo } }
     assert_redirected_to user_url(@user)
+  end
+
+  test 'should not update user (password difference) after registering' do
+    create_user
+    patch user_url(@user), params: { user: { email: @user.email, language: @user.language, password: 'secret', password_confirmation: 'otherSecret', pseudo: @user.pseudo } }
+    assert_template :edit
   end
 
   test 'should destroy user after registering' do

@@ -21,4 +21,19 @@ class Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to admin_categories_url
   end
+
+  test 'should get index categories' do
+    get admin_categories_url
+    assert_response :success
+  end
+
+  test 'should get new category' do
+    get new_admin_category_url
+    assert_response :success
+  end
+
+  test 'should show category' do
+    get admin_category_url(@cat_without_places.id)
+    assert_response :success
+  end
 end

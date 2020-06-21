@@ -36,6 +36,11 @@
         <p class="subtitle is-5"><%= t('place.description') %></p>
         <p><%= @place.description %></p>
       <% end %>
+      <% if @place.url %>
+        <footer class="card-footer">
+          <a class="card-footer-item" href="<%= @place.url %>" target="_blank"><%= t('place.more_information') %></a>
+        </footer>
+      <% end %>
     </div>
   </div>
 </div>

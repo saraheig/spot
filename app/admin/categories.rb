@@ -53,7 +53,7 @@ ActiveAdmin.register Category do
   # Customize form
   form html: { multiplart: true } do |form|
     form.inputs do
-      translated_input(form, :titles, input_html: { maxlength: '20', pattern: '[A-Za-z]+' })
+      translated_input(form, :titles, input_html: { maxlength: '20', pattern: '[A-Za-z]+' }, hint: t('category.title_format'))
       translated_input(form, :descriptions, required: false)
       form.input :place_ids, label: I18n.t('activerecord.attributes.category.places'), as: :check_boxes, collection: Place.all
     end

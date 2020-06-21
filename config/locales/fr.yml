@@ -31,6 +31,7 @@ fr:
         schedule: "Horaires"
         title: "Titre"
         updated_at: "Mis à jour le"
+        url: "Lien URL"
       user:
         created_at: "Créé le"
         email: "Email "
@@ -78,6 +79,7 @@ fr:
   category:
     description: "Description"
     title: "Titre"
+    title_format: "Aucun espace, aucun chiffre et aucun caractère spécial"
   errors:
     format: "Le champ \"%{attribute}\" %{message}."
     messages:
@@ -163,12 +165,14 @@ fr:
     duration_unit: "minutes"
     created_by: "Créé par"
     geometry: "Emplacement"
+    more_information: "Plus d'informations ici..."
     price: "Prix"
     price_unit: "CHF"
     schedule: "Horaires"
     suggestion: "Suggestion d'un nouveau lieu d'intérêt"
     title: "Titre"
     updated_by: "Mis à jour par"
+    url: "Lien URL"
   time:
     formats:
       long: "%d.%m.%Y - %Hh%M"
