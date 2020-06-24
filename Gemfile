@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0', '>= 6.0.1'
+gem 'rails', '~> 6.0', '>= 6.0.3.2'
 # Rails internals (application bootup, plugins, generators, rake tasks)
 gem 'railties', '~> 6.0', '>= 6.0.1'
 
@@ -40,7 +40,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Administration framework for Ruby on Rails
 gem 'activeadmin', '~> 2.4'
 gem 'cancancan', '~> 3.0', '>= 3.0.1'
-gem 'devise', '~> 4.7', '>= 4.7.1'
+gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'draper', '~> 3.1'
 gem 'pundit', '~> 2.1'
 
@@ -91,7 +91,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver with Chrome
-  gem 'capybara', '~> 3.29'
+  gem 'capybara', '~> 3.33'
   # WebDrive to write automated tests of websites
   gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
   gem 'webdrivers', '~> 4.0'
