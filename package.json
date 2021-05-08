@@ -8,7 +8,7 @@
     "bulma": "^0.8.0",
     "leaflet": "^1.6.0",
     "leaflet-defaulticon-compatibility": "^0.1.1",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "lodash.template": "4.5.0",
     "mixin-deep": "2.0.1",
     "node": "^13.1.0",
